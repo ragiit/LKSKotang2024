@@ -1,6 +1,6 @@
-CREATE DATABASE EsemkaHRMaster
+CREATE DATABASE EsemkaHRMaster1
 GO
-USE EsemkaHRMaster
+USE EsemkaHRMaster1
 GO
 
 CREATE TABLE EmployeeStatuses (
@@ -22,6 +22,14 @@ CREATE TABLE Countries (
     ID INT PRIMARY KEY IDENTITY,
     Name VARCHAR(100) UNIQUE NOT NULL,
     Code CHAR(2) UNIQUE
+);
+
+CREATE TABLE Cities (
+    ID INT PRIMARY KEY IDENTITY,
+    CountryID INT NOT NULL,
+    Name VARCHAR(100) UNIQUE NOT NULL,
+
+    FOREIGN KEY (CountryID) REFERENCES Countries(ID)
 );
 
 CREATE TABLE Departments (
@@ -53,19 +61,11 @@ CREATE TABLE JobTitles (
     FOREIGN KEY (PositionID) REFERENCES JobPositions(ID)
 );
 
-CREATE TABLE Cities (
-    ID INT PRIMARY KEY IDENTITY,
-    CountryID INT NOT NULL,
-    Name VARCHAR(100) UNIQUE NOT NULL,
-
-    FOREIGN KEY (CountryID) REFERENCES Countries(ID)
-);
-
 CREATE TABLE Users (
     ID INT PRIMARY KEY IDENTITY,
 	RoleID INT NOT NULL,
 	JobTitleID INT NOT NULL,
-    CountryID INT NOT NULL,
+    CountryID INT NOT NULL, -- for Citizenship (Kewarganegaraan)
 	DepartmentID INT NOT NULL,
     CityID INT NOT NULL,
 	EmployeeStatusID INT NOT NULL,
@@ -73,16 +73,19 @@ CREATE TABLE Users (
     Password VARCHAR(100) NOT NULL,
     Email VARCHAR(100) UNIQUE NOT NULL,
     FullName VARCHAR(100) NOT NULL,
-    DateOfBirth DATE,
-    Gender VARCHAR(50),
-    Address VARCHAR(255),  
-    Phone VARCHAR(20),
+	IDCardNumber VARCHAR(100) NOT NULL,
+	CivilStatus VARCHAR(20) NOT NULL,
+	Religion VARCHAR(20) NOT NULL,
+    DateOfBirth DATE NOT NULL,
+    Gender VARCHAR(50) NOT NULL,
+    Address VARCHAR(255) NOT NULL,  
+    Phone VARCHAR(20) NOT NULL,
     RegistrationDate DATETIME2 DEFAULT CURRENT_TIMESTAMP NOT NULL, 
-	JoinDate DATE,
+	JoinDate DATE NOT NULL,
 	StatusStartDate DATE,
 	StatusEndDate DATE,
     Active BIT DEFAULT 0 NOT NULL,
-	SALARY MONEY NOT NULL,
+	SALARY MONEY,
 	Photo VARCHAR(100)
 
     FOREIGN KEY (JobTitleID) REFERENCES JobTitles(ID),
