@@ -14,6 +14,6 @@ D:\GithubRepo\LKSKotang2024\Desktop\EsemkaHRSystem.Desktop\EsemkaHRSystem.Deskto
 D:\GithubRepo\LKSKotang2024\Desktop\EsemkaHRSystem.Desktop\EsemkaHRSystem.Desktop\obj\Debug\EsemkaHRSystem.Desktop.MasterCityForm.resources
 D:\GithubRepo\LKSKotang2024\Desktop\EsemkaHRSystem.Desktop\EsemkaHRSystem.Desktop\obj\Debug\EsemkaHRSystem.Desktop.MasterCountryForm.resources
 D:\GithubRepo\LKSKotang2024\Desktop\EsemkaHRSystem.Desktop\EsemkaHRSystem.Desktop\obj\Debug\EsemkaHRSystem.Desktop.MasterEmployeeForm.resources
-D:\GithubRepo\LKSKotang2024\Desktop\EsemkaHRSystem.Desktop\EsemkaHRSystem.Desktop\obj\Debug\EsemkaHRSystem.Desktop.MasterJobPositionAndJobTitleForm.resources
 D:\GithubRepo\LKSKotang2024\Desktop\EsemkaHRSystem.Desktop\EsemkaHRSystem.Desktop\obj\Debug\EsemkaHRSystem.Desktop.MyProfileForm.resources
 D:\GithubRepo\LKSKotang2024\Desktop\EsemkaHRSystem.Desktop\EsemkaHRSystem.Desktop\obj\Debug\EsemkaHRSystem.Desktop.MyScheduleForm.resources
+D:\GithubRepo\LKSKotang2024\Desktop\EsemkaHRSystem.Desktop\EsemkaHRSystem.Desktop\obj\Debug\EsemkaHRSystem.Desktop.MasterJob.resources

@@ -82,11 +82,11 @@
     <Compile Include="MasterEmployeeForm.Designer.cs">
       <DependentUpon>MasterEmployeeForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="MasterJobPositionAndJobTitleForm.cs">
+    <Compile Include="MasterJob.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MasterJobPositionAndJobTitleForm.Designer.cs">
-      <DependentUpon>MasterJobPositionAndJobTitleForm.cs</DependentUpon>
+    <Compile Include="MasterJob.Designer.cs">
+      <DependentUpon>MasterJob.cs</DependentUpon>
     </Compile>
     <Compile Include="MyProfileForm.cs">
       <SubType>Form</SubType>
@@ -126,8 +126,8 @@
     <EmbeddedResource Include="MasterEmployeeForm.resx">
       <DependentUpon>MasterEmployeeForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MasterJobPositionAndJobTitleForm.resx">
-      <DependentUpon>MasterJobPositionAndJobTitleForm.cs</DependentUpon>
+    <EmbeddedResource Include="MasterJob.resx">
+      <DependentUpon>MasterJob.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MyProfileForm.resx">
       <DependentUpon>MyProfileForm.cs</DependentUpon>

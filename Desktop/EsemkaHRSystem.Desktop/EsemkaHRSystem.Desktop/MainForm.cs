@@ -27,8 +27,9 @@ namespace EsemkaHRSystem.Desktop
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            masterToolStripMenuItem.Visible = false;
-            menuSecondItem.Text = "My Schedule";
+            toolStripMenuItem1.Visible = false;
+            masterToolStripMenuItem.Visible = true;
+            //menuSecondItem.Text = "My Schedule";
         }
 
         private void masterEmployeeToolStripMenuItem_Click(object sender, EventArgs e)
@@ -41,7 +42,7 @@ namespace EsemkaHRSystem.Desktop
 
         private void masterJobPositionAndJobTitleToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new MasterJobPositionAndJobTitleForm
+            new MasterJob
             {
                 MdiParent = this
             }.Show();

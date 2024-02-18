@@ -35,8 +35,8 @@
             this.masterCountryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.masterCityToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuSecondItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.logoutToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.logoutToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -67,28 +67,28 @@
             // masterEmployeeToolStripMenuItem
             // 
             this.masterEmployeeToolStripMenuItem.Name = "masterEmployeeToolStripMenuItem";
-            this.masterEmployeeToolStripMenuItem.Size = new System.Drawing.Size(246, 22);
+            this.masterEmployeeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.masterEmployeeToolStripMenuItem.Text = "Master Employee";
             this.masterEmployeeToolStripMenuItem.Click += new System.EventHandler(this.masterEmployeeToolStripMenuItem_Click);
             // 
             // masterJobPositionAndJobTitleToolStripMenuItem
             // 
             this.masterJobPositionAndJobTitleToolStripMenuItem.Name = "masterJobPositionAndJobTitleToolStripMenuItem";
-            this.masterJobPositionAndJobTitleToolStripMenuItem.Size = new System.Drawing.Size(246, 22);
-            this.masterJobPositionAndJobTitleToolStripMenuItem.Text = "Master Job Position and Job Title";
+            this.masterJobPositionAndJobTitleToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.masterJobPositionAndJobTitleToolStripMenuItem.Text = "Master Job";
             this.masterJobPositionAndJobTitleToolStripMenuItem.Click += new System.EventHandler(this.masterJobPositionAndJobTitleToolStripMenuItem_Click);
             // 
             // masterCountryToolStripMenuItem
             // 
             this.masterCountryToolStripMenuItem.Name = "masterCountryToolStripMenuItem";
-            this.masterCountryToolStripMenuItem.Size = new System.Drawing.Size(246, 22);
+            this.masterCountryToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.masterCountryToolStripMenuItem.Text = "Master Country";
             this.masterCountryToolStripMenuItem.Click += new System.EventHandler(this.masterCountryToolStripMenuItem_Click);
             // 
             // masterCityToolStripMenuItem
             // 
             this.masterCityToolStripMenuItem.Name = "masterCityToolStripMenuItem";
-            this.masterCityToolStripMenuItem.Size = new System.Drawing.Size(246, 22);
+            this.masterCityToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.masterCityToolStripMenuItem.Text = "Master City";
             this.masterCityToolStripMenuItem.Click += new System.EventHandler(this.masterCityToolStripMenuItem_Click);
             // 
@@ -99,19 +99,19 @@
             this.menuSecondItem.Text = "Generate Employee Schedule ";
             this.menuSecondItem.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click);
             // 
-            // logoutToolStripMenuItem1
-            // 
-            this.logoutToolStripMenuItem1.Name = "logoutToolStripMenuItem1";
-            this.logoutToolStripMenuItem1.Size = new System.Drawing.Size(57, 20);
-            this.logoutToolStripMenuItem1.Text = "Logout";
-            this.logoutToolStripMenuItem1.Click += new System.EventHandler(this.logoutToolStripMenuItem1_Click);
-            // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
             this.toolStripMenuItem1.Size = new System.Drawing.Size(73, 20);
             this.toolStripMenuItem1.Text = "My Profile";
             this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
+            // 
+            // logoutToolStripMenuItem1
+            // 
+            this.logoutToolStripMenuItem1.Name = "logoutToolStripMenuItem1";
+            this.logoutToolStripMenuItem1.Size = new System.Drawing.Size(57, 20);
+            this.logoutToolStripMenuItem1.Text = "Logout";
+            this.logoutToolStripMenuItem1.Click += new System.EventHandler(this.logoutToolStripMenuItem1_Click);
             // 
             // MainForm
             // 
