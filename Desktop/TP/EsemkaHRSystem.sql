@@ -1,6 +1,6 @@
-CREATE DATABASE EsemkaHRMaster1
+CREATE DATABASE EsemkaHRMaster
 GO
-USE EsemkaHRMaster1
+USE EsemkaHRMaster
 GO
 
 CREATE TABLE EmployeeStatuses (
@@ -246,7 +246,7 @@ INSERT INTO Countries (Name, Code) VALUES
 	('Antigua and Barbuda', 'AG'),
 	('Argentina', 'AR'),
 	('Armenia', 'AM'),
-	('Australia', 'AU'),
+	('Japan', 'JP'),
 	('Austria', 'AT'),
 	('Azerbaijan', 'AZ'),
 	('Bahamas', 'BS'),
