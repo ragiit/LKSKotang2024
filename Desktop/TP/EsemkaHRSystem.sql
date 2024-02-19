@@ -66,7 +66,7 @@ CREATE TABLE Users (
 	RoleID INT NOT NULL, -- DEFAULT Set to User when register new employee
 	JobTitleID INT NOT NULL,
     CountryID INT NOT NULL, -- for Citizenship (Kewarganegaraan)
-	DepartmentID INT NOT NULL,
+	DepartmentID INT,
     CityID INT NOT NULL, 
 	EmployeeStatusID INT,
     Username VARCHAR(50) UNIQUE NOT NULL,

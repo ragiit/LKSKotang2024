@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="EsemkaHRMaster" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=.\ITSSB;Initial Catalog=EsemkaHRMaster;Integrated Security=True;Trust Server Certificate=True" SettingsObjectName="EsemkaHRSystem.Desktop.Properties.Settings" SettingsPropertyName="EsemkaHRMasterConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Cities" Member="Cities">
+    <Type Name="City">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CountryID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Association Name="City_User" Member="Users" ThisKey="ID" OtherKey="CityID" Type="User" />
+      <Association Name="Country_City" Member="Country" ThisKey="CountryID" OtherKey="ID" Type="Country" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.WorkLocations" Member="WorkLocations">
+    <Type Name="WorkLocation">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Association Name="WorkLocation_Schedule" Member="Schedules" ThisKey="ID" OtherKey="WorkLocationID" Type="Schedule" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Countries" Member="Countries">
+    <Type Name="Country">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Code" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Association Name="Country_City" Member="Cities" ThisKey="ID" OtherKey="CountryID" Type="City" />
+      <Association Name="Country_User" Member="Users" ThisKey="ID" OtherKey="CountryID" Type="User" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Departments" Member="Departments">
+    <Type Name="Department">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Association Name="Department_User" Member="Users" ThisKey="ID" OtherKey="DepartmentID" Type="User" />
+    </Type>
+  </Table>
+  <Table Name="dbo.EmployeeStatuses" Member="EmployeeStatuses">
+    <Type Name="EmployeeStatuse">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="EmployeeStatuse_User" Member="Users" ThisKey="ID" OtherKey="EmployeeStatusID" Type="User" />
+    </Type>
+  </Table>
+  <Table Name="dbo.JobPositions" Member="JobPositions">
+    <Type Name="JobPosition">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="JobPosition_JobTitle" Member="JobTitles" ThisKey="ID" OtherKey="PositionID" Type="JobTitle" />
+    </Type>
+  </Table>
+  <Table Name="dbo.JobTitles" Member="JobTitles">
+    <Type Name="JobTitle">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PositionID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="[Level]" Member="Level" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="JobTitle_User" Member="Users" ThisKey="ID" OtherKey="JobTitleID" Type="User" />
+      <Association Name="JobPosition_JobTitle" Member="JobPosition" ThisKey="PositionID" OtherKey="ID" Type="JobPosition" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Roles" Member="Roles">
+    <Type Name="Role">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Association Name="Role_User" Member="Users" ThisKey="ID" OtherKey="RoleID" Type="User" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Schedule" Member="Schedules">
+    <Type Name="Schedule">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UserID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="StartDate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="EndDate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="WorkLocationID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="WorkDayID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Schedule_ScheduleDetail" Member="ScheduleDetails" ThisKey="ID" OtherKey="ScheduleID" Type="ScheduleDetail" />
+      <Association Name="WorkLocation_Schedule" Member="WorkLocation" ThisKey="WorkLocationID" OtherKey="ID" Type="WorkLocation" IsForeignKey="true" />
+      <Association Name="User_Schedule" Member="User" ThisKey="UserID" OtherKey="ID" Type="User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ScheduleDetail" Member="ScheduleDetails">
+    <Type Name="ScheduleDetail">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ScheduleID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="StartTimeId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="EndTimeId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="BreakTimeId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="BreakDuration" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Schedule_ScheduleDetail" Member="Schedule" ThisKey="ScheduleID" OtherKey="ID" Type="Schedule" IsForeignKey="true" />
+      <Association Name="Time_ScheduleDetail" Member="Time" ThisKey="BreakTimeId" OtherKey="ID" Type="Time" IsForeignKey="true" />
+      <Association Name="Time_ScheduleDetail1" Member="Time1" ThisKey="EndTimeId" OtherKey="ID" Type="Time" IsForeignKey="true" />
+      <Association Name="Time_ScheduleDetail2" Member="Time2" ThisKey="StartTimeId" OtherKey="ID" Type="Time" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Times" Member="Times">
+    <Type Name="Time">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TimeValue" Type="System.TimeSpan" DbType="Time NOT NULL" CanBeNull="false" />
+      <Association Name="Time_ScheduleDetail" Member="ScheduleDetails" ThisKey="ID" OtherKey="BreakTimeId" Type="ScheduleDetail" />
+      <Association Name="Time_ScheduleDetail1" Member="ScheduleDetails1" ThisKey="ID" OtherKey="EndTimeId" Type="ScheduleDetail" />
+      <Association Name="Time_ScheduleDetail2" Member="ScheduleDetails2" ThisKey="ID" OtherKey="StartTimeId" Type="ScheduleDetail" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Users" Member="Users">
+    <Type Name="User">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="RoleID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="JobTitleID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CountryID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DepartmentID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CityID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="EmployeeStatusID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Username" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Password" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="FullName" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="IDCardNumber" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="CivilStatus" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Religion" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="DateOfBirth" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Gender" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Address" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Phone" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="RegistrationDate" Type="System.DateTime" DbType="DateTime2 NOT NULL" CanBeNull="false" />
+      <Column Name="JoinDate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="StatusStartDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="StatusEndDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="SALARY" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Photo" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Association Name="User_Schedule" Member="Schedules" ThisKey="ID" OtherKey="UserID" Type="Schedule" />
+      <Association Name="City_User" Member="City" ThisKey="CityID" OtherKey="ID" Type="City" IsForeignKey="true" />
+      <Association Name="Country_User" Member="Country" ThisKey="CountryID" OtherKey="ID" Type="Country" IsForeignKey="true" />
+      <Association Name="Department_User" Member="Department" ThisKey="DepartmentID" OtherKey="ID" Type="Department" IsForeignKey="true" />
+      <Association Name="EmployeeStatuse_User" Member="EmployeeStatuse" ThisKey="EmployeeStatusID" OtherKey="ID" Type="EmployeeStatuse" IsForeignKey="true" />
+      <Association Name="JobTitle_User" Member="JobTitle" ThisKey="JobTitleID" OtherKey="ID" Type="JobTitle" IsForeignKey="true" />
+      <Association Name="Role_User" Member="Role" ThisKey="RoleID" OtherKey="ID" Type="Role" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.WorkDays" Member="WorkDays">
+    <Type Name="WorkDay">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+</Database>
