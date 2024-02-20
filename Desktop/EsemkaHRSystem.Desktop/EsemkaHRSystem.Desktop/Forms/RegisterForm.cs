@@ -93,8 +93,11 @@ namespace EsemkaHRSystem.Desktop
             {
                 if (groupBox1.CheckIsEmpty() || groupBox2.CheckIsEmpty())
                 {
-                    "Please insert all fields".ShowInformationMessage();
-                    return;
+                    if (!string.IsNullOrWhiteSpace(cbCity.Text) && !string.IsNullOrWhiteSpace(PhotoName))
+                    {
+                        "Please insert all fields".ShowInformationMessage();
+                        return;
+                    }
                 }
 
                 var checkEmail = db.Users.FirstOrDefault(x => x.Email == tbEmail.Text);
@@ -142,7 +145,7 @@ namespace EsemkaHRSystem.Desktop
                     Bitmap bitmap = new Bitmap(FileName);
 
                     Directory.CreateDirectory(Path.GetDirectoryName(savePath));
-                    bitmap.Save(savePath);  
+                    bitmap.Save(savePath);
                 }
                 catch { }
 

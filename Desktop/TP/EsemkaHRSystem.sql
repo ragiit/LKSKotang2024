@@ -105,12 +105,14 @@ CREATE TABLE Schedule (
     WorkDayID INT NOT NULL,
     
     FOREIGN KEY (UserID) REFERENCES Users(ID),
-    FOREIGN KEY (WorkLocationID) REFERENCES WorkLocations(ID)
+    FOREIGN KEY (WorkLocationID) REFERENCES WorkLocations(ID),
+	FOREIGN KEY (WorkDayID) REFERENCES WorkDays(ID),
 ); 
 
 CREATE TABLE ScheduleDetail (
     ID INT PRIMARY KEY IDENTITY,
     ScheduleID INT NOT NULL,
+	Date DATE NOT NULL,
     StartTimeId INT NOT NULL,
     EndTimeId INT NOT NULL,
 	BreakTimeId INT NOT NULL,
@@ -289,3 +291,12 @@ INSERT INTO Cities (Name, CountryID) VALUES
 	('Depok', 21),
 	('Tangerang', 21),
 	('Bogor', 21);
+
+
+SET IDENTITY_INSERT [dbo].[Users] ON 
+
+INSERT [dbo].[Users] ([ID], [RoleID], [JobTitleID], [CountryID], [DepartmentID], [CityID], [EmployeeStatusID], [Username], [Password], [Email], [FullName], [IDCardNumber], [CivilStatus], [Religion], [DateOfBirth], [Gender], [Address], [Phone], [RegistrationDate], [JoinDate], [StatusStartDate], [StatusEndDate], [Active], [SALARY], [Photo]) VALUES (1, 1, 8, 21, NULL, 26, NULL, N'admin', N'123', N'admin@mail.com', N'Admin', N'32643532523', N'Single', N'Islam', CAST(N'2024-02-20' AS Date), N'Male', N'Jakarta', N'0856179863412', CAST(N'2024-02-20T22:03:13.5254799' AS DateTime2), CAST(N'2024-02-20' AS Date), NULL, NULL, 1, NULL, N'9649095_6909.jpg')
+INSERT [dbo].[Users] ([ID], [RoleID], [JobTitleID], [CountryID], [DepartmentID], [CityID], [EmployeeStatusID], [Username], [Password], [Email], [FullName], [IDCardNumber], [CivilStatus], [Religion], [DateOfBirth], [Gender], [Address], [Phone], [RegistrationDate], [JoinDate], [StatusStartDate], [StatusEndDate], [Active], [SALARY], [Photo]) VALUES (2, 2, 19, 21, 9, 25, 10, N'user', N'123', N'user@mail.com', N'User', N'234985721893', N'Single', N'Islam', CAST(N'2024-02-20' AS Date), N'Male', N'Jakarta', N'0817625361253', CAST(N'2024-02-20T22:03:39.5933262' AS DateTime2), CAST(N'2024-02-20' AS Date), CAST(N'2024-02-20' AS Date), CAST(N'2024-05-08' AS Date), 1, 5000000.0000, N'wallpaperflare.com_wallpaper.jpg')
+INSERT [dbo].[Users] ([ID], [RoleID], [JobTitleID], [CountryID], [DepartmentID], [CityID], [EmployeeStatusID], [Username], [Password], [Email], [FullName], [IDCardNumber], [CivilStatus], [Religion], [DateOfBirth], [Gender], [Address], [Phone], [RegistrationDate], [JoinDate], [StatusStartDate], [StatusEndDate], [Active], [SALARY], [Photo]) VALUES (3, 2, 8, 21, 19, 27, 5, N'ragiit', N'123', N'ragit@mail.com', N'Ragit', N'287364782', N'Single', N'Islam', CAST(N'2024-02-20' AS Date), N'Male', N'Poris', N'08187246781', CAST(N'2024-02-20T22:04:13.5774810' AS DateTime2), CAST(N'2024-02-20' AS Date), CAST(N'2024-02-20' AS Date), CAST(N'2024-02-20' AS Date), 1, 100000.0000, N'wallpaperflare.com_wallpaper.jpg')
+SET IDENTITY_INSERT [dbo].[Users] OFF
+GO

@@ -156,7 +156,7 @@
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -174,6 +174,7 @@
             // 
             // EditGrid
             // 
+            this.EditGrid.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.EditGrid.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.EditGrid.HeaderText = "Edit";
             this.EditGrid.Name = "EditGrid";
@@ -186,13 +187,15 @@
             // 
             // DeleteGrid
             // 
+            this.DeleteGrid.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.DeleteGrid.FillWeight = 98.47716F;
             this.DeleteGrid.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.DeleteGrid.HeaderText = "Delete";
             this.DeleteGrid.Name = "DeleteGrid";
             this.DeleteGrid.ReadOnly = true;
             this.DeleteGrid.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.DeleteGrid.Text = "Edit";
-            this.DeleteGrid.ToolTipText = "Edit";
+            this.DeleteGrid.Text = "Delete";
+            this.DeleteGrid.ToolTipText = "Delete";
             this.DeleteGrid.UseColumnTextForButtonValue = true;
             this.DeleteGrid.Width = 69;
             // 

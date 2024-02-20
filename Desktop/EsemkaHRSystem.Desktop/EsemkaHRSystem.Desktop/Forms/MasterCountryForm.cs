@@ -14,6 +14,7 @@ namespace EsemkaHRSystem.Desktop
     public partial class MasterCountryForm : Form
     {
         private Country SelectedCountry = new Country();
+
         public MasterCountryForm()
         {
             InitializeComponent();
@@ -33,6 +34,7 @@ namespace EsemkaHRSystem.Desktop
                 {
                     x.ID,
                     x.Name,
+                    x.Code,
                     x
                 }).ToList();
 
@@ -68,12 +70,15 @@ namespace EsemkaHRSystem.Desktop
                     {
                         using (DataClasses1DataContext db = new DataClasses1DataContext())
                         {
-                            db.Countries.DeleteOnSubmit(SelectedCountry);
+                            db.Countries.DeleteOnSubmit(db.Countries.FirstOrDefault(x => x.ID == SelectedCountry.ID));
                             db.SubmitChanges();
 
                             SelectedCountry = new Country();
 
                             "Deleted Successfully".ShowInformationMessage();
+
+                            groupBox2.ClearField();
+
                             LoadData();
                         }
                     }
@@ -104,7 +109,7 @@ namespace EsemkaHRSystem.Desktop
                     {
                         Name = tbName.Text,
                         Code = tbCode.Text
-                    }); 
+                    });
                 }
                 else
                 {
@@ -118,17 +123,16 @@ namespace EsemkaHRSystem.Desktop
                     existingName = db.Countries.FirstOrDefault(x => x.ID == SelectedCountry.ID);
                     existingName.ID = SelectedCountry.ID;
                     existingName.Name = tbName.Text;
-                    existingName.Code = tbCode.Text; 
+                    existingName.Code = tbCode.Text;
                 }
 
                 db.SubmitChanges();
 
                 "Saved Successfully".ShowInformationMessage();
 
+                groupBox2.ClearField();
 
                 LoadData();
-
-
             }
         }
 

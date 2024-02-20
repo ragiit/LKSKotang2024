@@ -81,6 +81,7 @@
     <Type Name="ScheduleDetail">
       <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="ScheduleID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
       <Column Name="StartTimeId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="EndTimeId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="BreakTimeId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />

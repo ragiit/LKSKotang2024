@@ -17,6 +17,7 @@ namespace EsemkaHRSystem.Desktop
         private JobPosition SelectedJobPosition = new JobPosition();
 
         private List<JobTitle> JobTitles = new List<JobTitle>();
+
         public MasterJobForm()
         {
             InitializeComponent();
@@ -31,7 +32,7 @@ namespace EsemkaHRSystem.Desktop
         {
             using (DataClasses1DataContext db = new DataClasses1DataContext())
             {
-                dataGridView1.DataSource = null; 
+                dataGridView1.DataSource = null;
 
                 JobTitles = db.JobTitles.ToList();
 
@@ -80,7 +81,6 @@ namespace EsemkaHRSystem.Desktop
 
         private void dataGridView1_Click(object sender, EventArgs e)
         {
-
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -90,7 +90,7 @@ namespace EsemkaHRSystem.Desktop
                 if (e.RowIndex > -1)
                 {
                     DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
-                    SelectedJobPosition = row.Cells["x"].Value as JobPosition; 
+                    SelectedJobPosition = row.Cells["x"].Value as JobPosition;
 
                     dataGridView2.DataSource = null;
                     dataGridView2.DataSource = JobTitles.Where(x => x.PositionID == SelectedJobPosition.ID)
@@ -110,7 +110,6 @@ namespace EsemkaHRSystem.Desktop
             }
             catch (Exception)
             {
-
                 throw;
             }
         }
@@ -122,7 +121,7 @@ namespace EsemkaHRSystem.Desktop
                 if (e.RowIndex > -1)
                 {
                     DataGridViewRow row = dataGridView2.Rows[e.RowIndex];
-                   
+
                     if (e.ColumnIndex == 0)
                     {
                         SelectedJobTitle = row.Cells["x"].Value as JobTitle;
@@ -130,7 +129,7 @@ namespace EsemkaHRSystem.Desktop
                         numericUpDown1.Value = SelectedJobTitle.Level;
                     }
 
-                    if (e.ColumnIndex == 1) 
+                    if (e.ColumnIndex == 1)
                     {
                         SelectedJobTitle = row.Cells["x"].Value as JobTitle;
                         if (MessageBox.Show("Are you sure want to delete this row?", "Information", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
@@ -142,17 +141,19 @@ namespace EsemkaHRSystem.Desktop
 
                                 SelectedJobTitle = new JobTitle();
 
+                                groupBox3.ClearField();
+
                                 "Deleted Successfully".ShowInformationMessage();
+
                                 LoadData();
                             }
                         }
                     }
                 }
             }
-            catch (Exception)
+            catch (Exception ee)
             {
-
-                throw;
+                MessageBox.Show("Error when deleted the data. \n" + ee.Message);
             }
         }
 
@@ -172,50 +173,44 @@ namespace EsemkaHRSystem.Desktop
 
             using (DataClasses1DataContext db = new DataClasses1DataContext())
             {
-                var existingName = db.JobTitles.FirstOrDefault(x => x.Name == tbName.Text);
-
-                if (SelectedJobTitle.ID == 0 && existingName != null)
+                if (SelectedJobTitle.ID == 0)
                 {
-                    "Job Title Name already exist".ShowInformationMessage();
-                    return;
-                }
-
-                if (existingName != null) 
-                {
-                    if (SelectedJobTitle.ID != 0 && SelectedJobTitle.Name != existingName.Name)
+                    var existingName = db.JobTitles.FirstOrDefault(x => x.Name == tbName.Text);
+                    if (existingName != null)
                     {
-                        "Job Title Name already exist".ShowInformationMessage();
+                        "Name already exist".ShowInformationMessage();
                         return;
                     }
 
-                    existingName.ID = SelectedJobTitle.ID;
-                    existingName.Name = tbName.Text;
-                    existingName.Level = numericUpDown1.Value.ToInt32();
-
-                    "Saved Successfully".ShowInformationMessage();
-
-                    db.SubmitChanges();
-
-                    LoadData();
-                }
-                else
-                {
                     db.JobTitles.InsertOnSubmit(new JobTitle
                     {
                         Name = tbName.Text,
                         Level = numericUpDown1.Value.ToInt32(),
                         PositionID = SelectedJobPosition.ID
                     });
-
-                    "Saved Successfully".ShowInformationMessage();
-
-                    db.SubmitChanges();
-
-                    groupBox3.ClearField();
-                    SelectedJobTitle = new JobTitle();
-
-                    LoadData();
                 }
+                else
+                {
+                    var existingName = db.JobTitles.FirstOrDefault(x => x.Name == tbName.Text && x.ID != SelectedJobTitle.ID);
+                    if (existingName != null)
+                    {
+                        "Name already exist".ShowInformationMessage();
+                        return;
+                    }
+
+                    existingName = db.JobTitles.FirstOrDefault(x => x.ID == SelectedJobTitle.ID);
+                    existingName.ID = SelectedJobTitle.ID;
+                    existingName.Name = tbName.Text;
+                    existingName.Level = numericUpDown1.Value.ToInt32();
+                }
+
+                db.SubmitChanges();
+
+                "Saved Successfully".ShowInformationMessage();
+
+                groupBox3.ClearField();
+
+                LoadData();
             }
         }
     }

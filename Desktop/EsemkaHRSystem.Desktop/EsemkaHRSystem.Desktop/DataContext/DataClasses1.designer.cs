@@ -1667,6 +1667,8 @@ namespace EsemkaHRSystem.Desktop.DataContext
 		
 		private int _ScheduleID;
 		
+		private System.DateTime _Date;
+		
 		private int _StartTimeId;
 		
 		private int _EndTimeId;
@@ -1691,6 +1693,8 @@ namespace EsemkaHRSystem.Desktop.DataContext
     partial void OnIDChanged();
     partial void OnScheduleIDChanging(int value);
     partial void OnScheduleIDChanged();
+    partial void OnDateChanging(System.DateTime value);
+    partial void OnDateChanged();
     partial void OnStartTimeIdChanging(int value);
     partial void OnStartTimeIdChanged();
     partial void OnEndTimeIdChanging(int value);
@@ -1750,6 +1754,26 @@ namespace EsemkaHRSystem.Desktop.DataContext
 					this._ScheduleID = value;
 					this.SendPropertyChanged("ScheduleID");
 					this.OnScheduleIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Date", DbType="Date NOT NULL")]
+		public System.DateTime Date
+		{
+			get
+			{
+				return this._Date;
+			}
+			set
+			{
+				if ((this._Date != value))
+				{
+					this.OnDateChanging(value);
+					this.SendPropertyChanging();
+					this._Date = value;
+					this.SendPropertyChanged("Date");
+					this.OnDateChanged();
 				}
 			}
 		}

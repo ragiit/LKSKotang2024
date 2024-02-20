@@ -15,6 +15,8 @@ namespace EsemkaHRSystem.Desktop
     public partial class MasterCityForm : Form
     {
         private City SelectedCity = new City();
+        private List<Country> Countries = new List<Country>();
+
         public MasterCityForm()
         {
             InitializeComponent();
@@ -25,9 +27,16 @@ namespace EsemkaHRSystem.Desktop
             dataGridView1.DataSource = null;
             using (DataClasses1DataContext db = new DataClasses1DataContext())
             {
+                Countries = db.Countries.ToList();
+
+                cbCountry.ValueMember = "Id";
+                cbCountry.DisplayMember = "Name";
+                cbCountry.DataSource = Countries;
+
                 dataGridView1.DataSource = db.Cities.Where(x => x.Name.ToLower().Contains(tbSearch.Text.ToLower())).Select(x => new
                 {
                     x.ID,
+                    Country = x.Country.Name,
                     x.Name,
                     x
                 }).ToList();
@@ -49,7 +58,7 @@ namespace EsemkaHRSystem.Desktop
                 {
                     SelectedCity = row.Cells["x"].Value as City;
                     tbName.Text = SelectedCity.Name;
-                    cbCountry.Text = SelectedCity.Country.Name;
+                    cbCountry.Text = Countries.FirstOrDefault(x => x.ID == SelectedCity.CountryID).Name;
                 }
 
                 if (e.ColumnIndex == 1)
@@ -65,6 +74,9 @@ namespace EsemkaHRSystem.Desktop
                             SelectedCity = new City();
 
                             "Deleted Successfully".ShowInformationMessage();
+
+                            groupBox2.ClearField();
+
                             LoadData();
                         }
                     }
@@ -93,46 +105,43 @@ namespace EsemkaHRSystem.Desktop
 
             using (DataClasses1DataContext db = new DataClasses1DataContext())
             {
-                var existingName = db.Cities.FirstOrDefault(x => x.Name == tbName.Text);
-
-                if (SelectedCity.ID == 0 && existingName != null)
+                if (SelectedCity.ID == 0)
                 {
-                    "Country Name already exist".ShowInformationMessage();
-                    return;
-                }
-
-                if (existingName != null)
-                {
-                    if (SelectedCity.ID != 0 && SelectedCity.Name != existingName.Name)
+                    var existingName = db.Countries.FirstOrDefault(x => x.Name == tbName.Text);
+                    if (existingName != null)
                     {
-                        "Country Name already exist".ShowInformationMessage();
+                        "City Name already exist".ShowInformationMessage();
                         return;
                     }
 
-                    existingName.ID = SelectedCity.ID;
-                    existingName.CountryID = int.Parse(cbCountry.SelectedValue.ToString());
-                    existingName.Name = tbName.Text;
-
-                    "Saved Successfully".ShowInformationMessage();
-
-                    db.SubmitChanges();
-
-                    LoadData();
-                }
-                else
-                {
                     db.Cities.InsertOnSubmit(new City
                     {
                         Name = tbName.Text,
-                        CountryID = int.Parse(cbCountry.SelectedValue.ToString()),
+                        CountryID = int.Parse(cbCountry.SelectedValue.ToString())
                     });
-
-                    "Saved Successfully".ShowInformationMessage();
-
-                    db.SubmitChanges();
-
-                    LoadData();
                 }
+                else
+                {
+                    var existingName = db.Cities.FirstOrDefault(x => x.Name == tbName.Text && x.ID != SelectedCity.ID);
+                    if (existingName != null)
+                    {
+                        "City Name already exist".ShowInformationMessage();
+                        return;
+                    }
+
+                    existingName = db.Cities.FirstOrDefault(x => x.ID == SelectedCity.ID);
+                    existingName.ID = SelectedCity.ID;
+                    existingName.Name = tbName.Text;
+                    existingName.CountryID = int.Parse(cbCountry.SelectedValue.ToString());
+                }
+
+                db.SubmitChanges();
+
+                "Saved Successfully".ShowInformationMessage();
+
+                groupBox2.ClearField();
+
+                LoadData();
             }
         }
     }

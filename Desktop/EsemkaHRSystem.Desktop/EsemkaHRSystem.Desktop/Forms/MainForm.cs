@@ -25,7 +25,7 @@ namespace EsemkaHRSystem.Desktop
 
         private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (logoutToolStripMenuItem1.Text.Equals("My Schedule"))
+            if (menuSecondItem.Text.Equals("My Schedule"))
             {
                 if (!IsMdiChildFormOpen(this, typeof(MyScheduleForm)))
                 {

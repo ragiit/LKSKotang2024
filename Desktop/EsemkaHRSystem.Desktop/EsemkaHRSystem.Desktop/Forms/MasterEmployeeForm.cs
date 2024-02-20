@@ -15,6 +15,8 @@ namespace EsemkaHRSystem.Desktop
     public partial class MasterEmployeeForm : Form
     {
         private User SelectedUser = new User();
+        private List<EmployeeStatuse> EmployeeStatuses = new List<EmployeeStatuse>();
+        private List<Department> Departments = new List<Department>();
 
         public MasterEmployeeForm()
         {
@@ -36,16 +38,16 @@ namespace EsemkaHRSystem.Desktop
         {
             using (DataClasses1DataContext db = new DataClasses1DataContext())
             {
-                var status = db.EmployeeStatuses.ToList();
-                var departments = db.Departments.ToList();
+                EmployeeStatuses = db.EmployeeStatuses.ToList();
+                Departments = db.Departments.ToList();
 
                 cbEmployeeStatus.ValueMember = "Id";
                 cbEmployeeStatus.DisplayMember = "Name";
                 cbDepartment.ValueMember = "Id";
                 cbDepartment.DisplayMember = "Name";
 
-                cbEmployeeStatus.DataSource = status;
-                cbDepartment.DataSource = departments;
+                cbEmployeeStatus.DataSource = EmployeeStatuses;
+                cbDepartment.DataSource = Departments;
             }
 
             LoadData();
@@ -76,7 +78,10 @@ namespace EsemkaHRSystem.Desktop
                         x,
                     }).ToList();
 
-
+                dataGridView1.Columns["JoinDate"].DefaultCellStyle.Format = "dd MMM yyyy";
+                dataGridView1.Columns["RegistrationDate"].DefaultCellStyle.Format = "dd MMM yyyy";
+                dataGridView1.Columns["StartDate"].DefaultCellStyle.Format = "dd MMM yyyy";
+                dataGridView1.Columns["EndDate"].DefaultCellStyle.Format = "dd MMM yyyy";
 
                 //dataGridView2.DataSource = db.Users
                 //  .Where(x => x.Role.Name.Equals("User") && x.JobTitle.Level <= 5 && x.FullName.Contains(tbSearch.Text))
@@ -114,31 +119,31 @@ namespace EsemkaHRSystem.Desktop
                 //    }
                 //}
 
-                foreach (DataGridViewRow item in dataGridView1.Rows)
-                {
-                    if (!string.IsNullOrWhiteSpace(item.Cells["Photo"].Value.ToString()))
-                    {
-                        //var path = $@"{Helper.PathBaseUrlImage}{item.Cells["Photo"].Value}";
-                        var path = $@"{item.Cells["Photo"].Value}";
-                        //var path = @"D:\GithubRepo\LKSKotang2024\Desktop\EsemkaHRSystem.Desktop\EsemkaHRSystem.Desktop\Images\RobloxScreenShot20240101_205643673.png";
-                        //Bitmap bm = new Bitmap($@"{item.Cells["Photo"].Value.ToString()}");
-                        //Bitmap bm = new Bitmap(Image.FromFile(item.Cells["Photo"].Value.ToString()));
-                        //bm = new Bitmap(bm, 50, 50);
-                        //item.Cells[PhotoGrid.Name].Value = File.ReadAllBytes(item.Cells["Photo"].Value.ToString());
-                        //item.Cells[PhotoGrid.Name] = new DataGridViewImageCell { Value = bm };
-                        //DataGridViewImageCell cell = new DataGridViewImageCell();
-                        //cell.Value = Image.FromFile(path);
-                        //item.Cells[PhotoGrid.Index] = cell;
-                        //item.Cells[PhotoGrid.Name].Value = File.ReadAllBytes(item.Cells["Photo"].Value.ToString());
+                //foreach (DataGridViewRow item in dataGridView1.Rows)
+                //{
+                //    if (!string.IsNullOrWhiteSpace(item.Cells["Photo"].Value.ToString()))
+                //    {
+                //        //var path = $@"{Helper.PathBaseUrlImage}{item.Cells["Photo"].Value}";
+                //        var path = $@"{item.Cells["Photo"].Value}";
+                //        //var path = @"D:\GithubRepo\LKSKotang2024\Desktop\EsemkaHRSystem.Desktop\EsemkaHRSystem.Desktop\Images\RobloxScreenShot20240101_205643673.png";
+                //        //Bitmap bm = new Bitmap($@"{item.Cells["Photo"].Value.ToString()}");
+                //        //Bitmap bm = new Bitmap(Image.FromFile(item.Cells["Photo"].Value.ToString()));
+                //        //bm = new Bitmap(bm, 50, 50);
+                //        //item.Cells[PhotoGrid.Name].Value = File.ReadAllBytes(item.Cells["Photo"].Value.ToString());
+                //        //item.Cells[PhotoGrid.Name] = new DataGridViewImageCell { Value = bm };
+                //        //DataGridViewImageCell cell = new DataGridViewImageCell();
+                //        //cell.Value = Image.FromFile(path);
+                //        //item.Cells[PhotoGrid.Index] = cell;
+                //        //item.Cells[PhotoGrid.Name].Value = File.ReadAllBytes(item.Cells["Photo"].Value.ToString());
 
-                        using (Bitmap bm = new Bitmap(path))
-                        {
-                            DataGridViewImageCell cell = new DataGridViewImageCell();
-                            cell.Value = bm;
-                            item.Cells[PhotoGrid.Index] = cell;
-                        }
-                    }
-                }
+                //        using (Bitmap bm = new Bitmap(path))
+                //        {
+                //            DataGridViewImageCell cell = new DataGridViewImageCell();
+                //            cell.Value = bm;
+                //            item.Cells[PhotoGrid.Index] = cell;
+                //        }
+                //    }
+                //}
             }
         }
 
@@ -154,11 +159,12 @@ namespace EsemkaHRSystem.Desktop
                     {
                         SelectedUser = r.Cells["x"].Value as User;
                         tbSalary.Text = SelectedUser.SALARY.ToString();
-                        cbEmployeeStatus.Text = SelectedUser.EmployeeStatuse?.Name;
-                        cbDepartment.Text = SelectedUser.Department?.Name;
+                        cbEmployeeStatus.Text = EmployeeStatuses.FirstOrDefault(x => x.ID == SelectedUser.EmployeeStatusID)?.Name;
+                        cbDepartment.Text = Departments.FirstOrDefault(x => x.ID == SelectedUser.DepartmentID)?.Name;
                         tbName.Text = SelectedUser.FullName;
                         dtStartDate.Value = SelectedUser.StatusStartDate.GetValueOrDefault();
                         dtEndDate.Value = SelectedUser.StatusEndDate.GetValueOrDefault();
+                        checkBox1.Checked = SelectedUser.Active;
                     }
                 }
             }
@@ -208,13 +214,15 @@ namespace EsemkaHRSystem.Desktop
                 user.DepartmentID = int.Parse(cbDepartment.SelectedValue.ToString());
                 user.StatusStartDate = dtStartDate.Value;
                 user.StatusEndDate = dtEndDate.Value;
-                user.Active = true;
+                user.Active = checkBox1.Checked;
 
                 db.SubmitChanges();
 
                 "Successfully Updated the User!".ShowInformationMessage();
 
                 SelectedUser = new User();
+
+                groupBox2.ClearField();
 
                 LoadData();
             }
