@@ -1348,6 +1348,8 @@ namespace EsemkaHRSystem.Desktop.DataContext
 		
 		private EntityRef<User> _User;
 		
+		private EntityRef<WorkDay> _WorkDay;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -1371,6 +1373,7 @@ namespace EsemkaHRSystem.Desktop.DataContext
 			this._ScheduleDetails = new EntitySet<ScheduleDetail>(new Action<ScheduleDetail>(this.attach_ScheduleDetails), new Action<ScheduleDetail>(this.detach_ScheduleDetails));
 			this._WorkLocation = default(EntityRef<WorkLocation>);
 			this._User = default(EntityRef<User>);
+			this._WorkDay = default(EntityRef<WorkDay>);
 			OnCreated();
 		}
 		
@@ -1493,6 +1496,10 @@ namespace EsemkaHRSystem.Desktop.DataContext
 			{
 				if ((this._WorkDayID != value))
 				{
+					if (this._WorkDay.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
 					this.OnWorkDayIDChanging(value);
 					this.SendPropertyChanging();
 					this._WorkDayID = value;
@@ -1579,6 +1586,40 @@ namespace EsemkaHRSystem.Desktop.DataContext
 						this._UserID = default(int);
 					}
 					this.SendPropertyChanged("User");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="WorkDay_Schedule", Storage="_WorkDay", ThisKey="WorkDayID", OtherKey="ID", IsForeignKey=true)]
+		public WorkDay WorkDay
+		{
+			get
+			{
+				return this._WorkDay.Entity;
+			}
+			set
+			{
+				WorkDay previousValue = this._WorkDay.Entity;
+				if (((previousValue != value) 
+							|| (this._WorkDay.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._WorkDay.Entity = null;
+						previousValue.Schedules.Remove(this);
+					}
+					this._WorkDay.Entity = value;
+					if ((value != null))
+					{
+						value.Schedules.Add(this);
+						this._WorkDayID = value.ID;
+					}
+					else
+					{
+						this._WorkDayID = default(int);
+					}
+					this.SendPropertyChanged("WorkDay");
 				}
 			}
 		}
@@ -3054,6 +3095,8 @@ namespace EsemkaHRSystem.Desktop.DataContext
 		
 		private string _Name;
 		
+		private EntitySet<Schedule> _Schedules;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -3066,6 +3109,7 @@ namespace EsemkaHRSystem.Desktop.DataContext
 		
 		public WorkDay()
 		{
+			this._Schedules = new EntitySet<Schedule>(new Action<Schedule>(this.attach_Schedules), new Action<Schedule>(this.detach_Schedules));
 			OnCreated();
 		}
 		
@@ -3109,6 +3153,19 @@ namespace EsemkaHRSystem.Desktop.DataContext
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="WorkDay_Schedule", Storage="_Schedules", ThisKey="ID", OtherKey="WorkDayID")]
+		public EntitySet<Schedule> Schedules
+		{
+			get
+			{
+				return this._Schedules;
+			}
+			set
+			{
+				this._Schedules.Assign(value);
+			}
+		}
+		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -3127,6 +3184,18 @@ namespace EsemkaHRSystem.Desktop.DataContext
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
+		}
+		
+		private void attach_Schedules(Schedule entity)
+		{
+			this.SendPropertyChanging();
+			entity.WorkDay = this;
+		}
+		
+		private void detach_Schedules(Schedule entity)
+		{
+			this.SendPropertyChanging();
+			entity.WorkDay = null;
 		}
 	}
 }

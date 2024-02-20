@@ -40,6 +40,8 @@ namespace EsemkaHRSystem.Desktop
                 var departments = db.Departments.ToList();
 
                 cbEmployeeStatus.ValueMember = "Id";
+                cbEmployeeStatus.DisplayMember = "Name";
+                cbDepartment.ValueMember = "Id";
                 cbDepartment.DisplayMember = "Name";
 
                 cbEmployeeStatus.DataSource = status;
@@ -53,6 +55,8 @@ namespace EsemkaHRSystem.Desktop
         {
             using (DataClasses1DataContext db = new DataClasses1DataContext())
             {
+                dataGridView1.DataSource = null;
+
                 dataGridView1.DataSource = db.Users
                     .Where(x => x.Role.Name.Equals("User") && x.JobTitle.Level <= 5 && x.FullName.Contains(tbSearch.Text))
                     .Select(x => new
@@ -68,9 +72,11 @@ namespace EsemkaHRSystem.Desktop
                         EndDate = x.JoinDate,
                         Salary = x.SALARY,
                         x.Active,
-                        x.Photo,
+                        Photo = Helper.PathBaseUrlImage + x.Photo,
                         x,
                     }).ToList();
+
+
 
                 //dataGridView2.DataSource = db.Users
                 //  .Where(x => x.Role.Name.Equals("User") && x.JobTitle.Level <= 5 && x.FullName.Contains(tbSearch.Text))
@@ -108,17 +114,31 @@ namespace EsemkaHRSystem.Desktop
                 //    }
                 //}
 
-                //foreach (DataGridViewRow item in dataGridView1.Rows)
-                //{
-                //    if (!string.IsNullOrWhiteSpace(item.Cells["Photo"].Value.ToString()))
-                //    {
-                //        //var path = $@"{Helper.PathBaseUrlImage}{item.Cells["Photo"].Value}";
-                //        var path = @"D:\GithubRepo\LKSKotang2024\Desktop\EsemkaHRSystem.Desktop\EsemkaHRSystem.Desktop\Images\RobloxScreenShot20240101_205643673.png";
-                //        Bitmap bm = new Bitmap($@"{path}");
-                //        //bm = new Bitmap(bm, 50, 50);
-                //        item.Cells[PhotoGrid.Name].Value = File.ReadAllBytes(path);
-                //    }
-                //}
+                foreach (DataGridViewRow item in dataGridView1.Rows)
+                {
+                    if (!string.IsNullOrWhiteSpace(item.Cells["Photo"].Value.ToString()))
+                    {
+                        //var path = $@"{Helper.PathBaseUrlImage}{item.Cells["Photo"].Value}";
+                        var path = $@"{item.Cells["Photo"].Value}";
+                        //var path = @"D:\GithubRepo\LKSKotang2024\Desktop\EsemkaHRSystem.Desktop\EsemkaHRSystem.Desktop\Images\RobloxScreenShot20240101_205643673.png";
+                        //Bitmap bm = new Bitmap($@"{item.Cells["Photo"].Value.ToString()}");
+                        //Bitmap bm = new Bitmap(Image.FromFile(item.Cells["Photo"].Value.ToString()));
+                        //bm = new Bitmap(bm, 50, 50);
+                        //item.Cells[PhotoGrid.Name].Value = File.ReadAllBytes(item.Cells["Photo"].Value.ToString());
+                        //item.Cells[PhotoGrid.Name] = new DataGridViewImageCell { Value = bm };
+                        //DataGridViewImageCell cell = new DataGridViewImageCell();
+                        //cell.Value = Image.FromFile(path);
+                        //item.Cells[PhotoGrid.Index] = cell;
+                        //item.Cells[PhotoGrid.Name].Value = File.ReadAllBytes(item.Cells["Photo"].Value.ToString());
+
+                        using (Bitmap bm = new Bitmap(path))
+                        {
+                            DataGridViewImageCell cell = new DataGridViewImageCell();
+                            cell.Value = bm;
+                            item.Cells[PhotoGrid.Index] = cell;
+                        }
+                    }
+                }
             }
         }
 
@@ -188,6 +208,7 @@ namespace EsemkaHRSystem.Desktop
                 user.DepartmentID = int.Parse(cbDepartment.SelectedValue.ToString());
                 user.StatusStartDate = dtStartDate.Value;
                 user.StatusEndDate = dtEndDate.Value;
+                user.Active = true;
 
                 db.SubmitChanges();
 

@@ -131,16 +131,20 @@ namespace EsemkaHRSystem.Desktop
                     Phone = tbPhone.Text,
                     RegistrationDate = DateTime.Now,
                     JoinDate = dateJoindate.Value,
-                    Photo = PhotoName
+                    Photo = string.IsNullOrWhiteSpace(PhotoName) ? null : PhotoName,
                 });
                 db.SubmitChanges();
 
                 var savePath = Helper.PathBaseUrlImage + PhotoName;
 
-                Bitmap bitmap = new Bitmap(FileName);
+                try
+                {
+                    Bitmap bitmap = new Bitmap(FileName);
 
-                Directory.CreateDirectory(Path.GetDirectoryName(savePath));
-                bitmap.Save(savePath);
+                    Directory.CreateDirectory(Path.GetDirectoryName(savePath));
+                    bitmap.Save(savePath);  
+                }
+                catch { }
 
                 "Successfully Registered".ShowInformationMessage();
 

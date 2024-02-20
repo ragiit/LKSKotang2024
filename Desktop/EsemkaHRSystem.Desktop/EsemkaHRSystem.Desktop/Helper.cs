@@ -19,6 +19,8 @@ namespace EsemkaHRSystem.Desktop
             MessageBox.Show(o.ToString(), "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
+        public static int ToInt32(this object o) => Convert.ToInt32(o);
+
         public static void KeypressGlobal(this KeyPressEventArgs e)
         {
             // Check if the key pressed is a digit or a control key (e.g., backspace)

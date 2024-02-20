@@ -74,6 +74,7 @@
       <Association Name="Schedule_ScheduleDetail" Member="ScheduleDetails" ThisKey="ID" OtherKey="ScheduleID" Type="ScheduleDetail" />
       <Association Name="WorkLocation_Schedule" Member="WorkLocation" ThisKey="WorkLocationID" OtherKey="ID" Type="WorkLocation" IsForeignKey="true" />
       <Association Name="User_Schedule" Member="User" ThisKey="UserID" OtherKey="ID" Type="User" IsForeignKey="true" />
+      <Association Name="WorkDay_Schedule" Member="WorkDay" ThisKey="WorkDayID" OtherKey="ID" Type="WorkDay" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.ScheduleDetail" Member="ScheduleDetails">
@@ -139,6 +140,7 @@
     <Type Name="WorkDay">
       <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="Name" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Association Name="WorkDay_Schedule" Member="Schedules" ThisKey="ID" OtherKey="WorkDayID" Type="Schedule" />
     </Type>
   </Table>
 </Database>
