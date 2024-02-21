@@ -8,18 +8,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace EsemkaHRSystem.Desktop
+namespace EsemkaHRSystem.Desktop.Forms
 {
-    public partial class MyScheduleForm : Form
+    public partial class MyScheduleUserConrol : UserControl
     {
-        public MyScheduleForm()
+        public MyScheduleUserConrol()
         {
             InitializeComponent();
-
-
         }
 
-        private void LoadControl() 
+        private void MyScheduleUserConrol_Load(object sender, EventArgs e)
         {
 
         }

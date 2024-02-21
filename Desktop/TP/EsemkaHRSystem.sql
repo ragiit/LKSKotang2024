@@ -300,3 +300,36 @@ INSERT [dbo].[Users] ([ID], [RoleID], [JobTitleID], [CountryID], [DepartmentID],
 INSERT [dbo].[Users] ([ID], [RoleID], [JobTitleID], [CountryID], [DepartmentID], [CityID], [EmployeeStatusID], [Username], [Password], [Email], [FullName], [IDCardNumber], [CivilStatus], [Religion], [DateOfBirth], [Gender], [Address], [Phone], [RegistrationDate], [JoinDate], [StatusStartDate], [StatusEndDate], [Active], [SALARY], [Photo]) VALUES (3, 2, 8, 21, 19, 27, 5, N'ragiit', N'123', N'ragit@mail.com', N'Ragit', N'287364782', N'Single', N'Islam', CAST(N'2024-02-20' AS Date), N'Male', N'Poris', N'08187246781', CAST(N'2024-02-20T22:04:13.5774810' AS DateTime2), CAST(N'2024-02-20' AS Date), CAST(N'2024-02-20' AS Date), CAST(N'2024-02-20' AS Date), 1, 100000.0000, N'wallpaperflare.com_wallpaper.jpg')
 SET IDENTITY_INSERT [dbo].[Users] OFF
 GO
+
+GO
+SET IDENTITY_INSERT [dbo].[Schedule] ON 
+
+INSERT [dbo].[Schedule] ([ID], [UserID], [StartDate], [EndDate], [WorkLocationID], [WorkDayID]) VALUES (6, 2, CAST(N'2024-02-26' AS Date), CAST(N'2024-03-08' AS Date), 2, 1)
+INSERT [dbo].[Schedule] ([ID], [UserID], [StartDate], [EndDate], [WorkLocationID], [WorkDayID]) VALUES (7, 3, CAST(N'2024-02-20' AS Date), CAST(N'2024-03-30' AS Date), 1, 2)
+SET IDENTITY_INSERT [dbo].[Schedule] OFF
+GO
+SET IDENTITY_INSERT [dbo].[ScheduleDetail] ON 
+
+INSERT [dbo].[ScheduleDetail] ([ID], [ScheduleID], [Date], [StartTimeId], [EndTimeId], [BreakTimeId], [BreakDuration]) VALUES (57, 6, CAST(N'2024-02-26' AS Date), 1, 1, 1, 60)
+INSERT [dbo].[ScheduleDetail] ([ID], [ScheduleID], [Date], [StartTimeId], [EndTimeId], [BreakTimeId], [BreakDuration]) VALUES (58, 6, CAST(N'2024-02-27' AS Date), 1, 1, 1, 60)
+INSERT [dbo].[ScheduleDetail] ([ID], [ScheduleID], [Date], [StartTimeId], [EndTimeId], [BreakTimeId], [BreakDuration]) VALUES (59, 6, CAST(N'2024-02-28' AS Date), 1, 1, 1, 60)
+INSERT [dbo].[ScheduleDetail] ([ID], [ScheduleID], [Date], [StartTimeId], [EndTimeId], [BreakTimeId], [BreakDuration]) VALUES (60, 6, CAST(N'2024-02-29' AS Date), 1, 1, 1, 60)
+INSERT [dbo].[ScheduleDetail] ([ID], [ScheduleID], [Date], [StartTimeId], [EndTimeId], [BreakTimeId], [BreakDuration]) VALUES (61, 6, CAST(N'2024-03-01' AS Date), 1, 1, 1, 60)
+INSERT [dbo].[ScheduleDetail] ([ID], [ScheduleID], [Date], [StartTimeId], [EndTimeId], [BreakTimeId], [BreakDuration]) VALUES (62, 6, CAST(N'2024-03-04' AS Date), 1, 1, 1, 60)
+INSERT [dbo].[ScheduleDetail] ([ID], [ScheduleID], [Date], [StartTimeId], [EndTimeId], [BreakTimeId], [BreakDuration]) VALUES (63, 6, CAST(N'2024-03-05' AS Date), 1, 1, 1, 60)
+INSERT [dbo].[ScheduleDetail] ([ID], [ScheduleID], [Date], [StartTimeId], [EndTimeId], [BreakTimeId], [BreakDuration]) VALUES (64, 6, CAST(N'2024-03-06' AS Date), 1, 1, 1, 60)
+INSERT [dbo].[ScheduleDetail] ([ID], [ScheduleID], [Date], [StartTimeId], [EndTimeId], [BreakTimeId], [BreakDuration]) VALUES (65, 6, CAST(N'2024-03-07' AS Date), 1, 1, 1, 60)
+INSERT [dbo].[ScheduleDetail] ([ID], [ScheduleID], [Date], [StartTimeId], [EndTimeId], [BreakTimeId], [BreakDuration]) VALUES (66, 6, CAST(N'2024-03-08' AS Date), 1, 1, 1, 60)
+INSERT [dbo].[ScheduleDetail] ([ID], [ScheduleID], [Date], [StartTimeId], [EndTimeId], [BreakTimeId], [BreakDuration]) VALUES (67, 7, CAST(N'2024-02-24' AS Date), 1, 1, 1, 60)
+INSERT [dbo].[ScheduleDetail] ([ID], [ScheduleID], [Date], [StartTimeId], [EndTimeId], [BreakTimeId], [BreakDuration]) VALUES (68, 7, CAST(N'2024-02-25' AS Date), 1, 1, 1, 60)
+INSERT [dbo].[ScheduleDetail] ([ID], [ScheduleID], [Date], [StartTimeId], [EndTimeId], [BreakTimeId], [BreakDuration]) VALUES (69, 7, CAST(N'2024-03-02' AS Date), 1, 1, 1, 60)
+INSERT [dbo].[ScheduleDetail] ([ID], [ScheduleID], [Date], [StartTimeId], [EndTimeId], [BreakTimeId], [BreakDuration]) VALUES (70, 7, CAST(N'2024-03-03' AS Date), 1, 1, 1, 60)
+INSERT [dbo].[ScheduleDetail] ([ID], [ScheduleID], [Date], [StartTimeId], [EndTimeId], [BreakTimeId], [BreakDuration]) VALUES (71, 7, CAST(N'2024-03-09' AS Date), 1, 1, 1, 60)
+INSERT [dbo].[ScheduleDetail] ([ID], [ScheduleID], [Date], [StartTimeId], [EndTimeId], [BreakTimeId], [BreakDuration]) VALUES (72, 7, CAST(N'2024-03-10' AS Date), 1, 1, 1, 60)
+INSERT [dbo].[ScheduleDetail] ([ID], [ScheduleID], [Date], [StartTimeId], [EndTimeId], [BreakTimeId], [BreakDuration]) VALUES (73, 7, CAST(N'2024-03-16' AS Date), 1, 1, 1, 60)
+INSERT [dbo].[ScheduleDetail] ([ID], [ScheduleID], [Date], [StartTimeId], [EndTimeId], [BreakTimeId], [BreakDuration]) VALUES (74, 7, CAST(N'2024-03-17' AS Date), 1, 1, 1, 60)
+INSERT [dbo].[ScheduleDetail] ([ID], [ScheduleID], [Date], [StartTimeId], [EndTimeId], [BreakTimeId], [BreakDuration]) VALUES (75, 7, CAST(N'2024-03-23' AS Date), 1, 1, 1, 60)
+INSERT [dbo].[ScheduleDetail] ([ID], [ScheduleID], [Date], [StartTimeId], [EndTimeId], [BreakTimeId], [BreakDuration]) VALUES (76, 7, CAST(N'2024-03-24' AS Date), 1, 1, 1, 60)
+INSERT [dbo].[ScheduleDetail] ([ID], [ScheduleID], [Date], [StartTimeId], [EndTimeId], [BreakTimeId], [BreakDuration]) VALUES (77, 7, CAST(N'2024-03-30' AS Date), 1, 1, 1, 60)
+SET IDENTITY_INSERT [dbo].[ScheduleDetail] OFF
+GO

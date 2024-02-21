@@ -58,6 +58,12 @@
     <Compile Include="Forms\GenerateEmployeeScheduleForm.Designer.cs">
       <DependentUpon>GenerateEmployeeScheduleForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\MyScheduleUserConrol.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\MyScheduleUserConrol.Designer.cs">
+      <DependentUpon>MyScheduleUserConrol.cs</DependentUpon>
+    </Compile>
     <Compile Include="Helper.cs" />
     <Compile Include="Forms\LoginForm.cs">
       <SubType>Form</SubType>
@@ -141,6 +147,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MyScheduleForm.resx">
       <DependentUpon>MyScheduleForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MyScheduleUserConrol.resx">
+      <DependentUpon>MyScheduleUserConrol.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
