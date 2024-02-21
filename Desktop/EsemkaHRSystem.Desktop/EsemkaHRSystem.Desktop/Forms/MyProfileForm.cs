@@ -26,7 +26,7 @@ namespace EsemkaHRSystem.Desktop
         {
             using (DataClasses1DataContext db = new DataClasses1DataContext())
             {
-                if (groupBox2.CheckIsEmpty())
+                if (groupBox1.CheckIsEmpty())
                 {
                     "Please insert all field".ShowInformationMessage();
                     return;
@@ -104,7 +104,10 @@ namespace EsemkaHRSystem.Desktop
                 cbCity.DisplayMember = "Name";
                 cbStatus.ValueMember = "Id";
                 cbStatus.DisplayMember = "Name";
+                cbDepartment.ValueMember = "Id";
+                cbDepartment.DisplayMember = "Name";
 
+                cbDepartment.DataSource = departments;
                 cbCountry.DataSource = countries;
                 cbCitizen.DataSource = citizenship;
                 cbCountry.DataSource = countries;
@@ -133,9 +136,14 @@ namespace EsemkaHRSystem.Desktop
                 tbSalary.Text = user.SALARY.ToString();
                 cbDepartment.Text = departments.FirstOrDefault(x => x.ID == user.DepartmentID).Name;
                 cbJobTitle.Text = jobTitles.FirstOrDefault(x => x.ID == user.JobTitleID).Name;
-                cbStatus.Text = status.FirstOrDefault(x => x.ID == user.JobTitleID).Name;
+                cbStatus.Text = status.FirstOrDefault(x => x.ID == user.EmployeeStatusID).Name;
                 dtStartDate.Value = user.StatusStartDate.Value;
                 dtEndDate.Value = user.StatusEndDate.Value;
+
+                if (!string.IsNullOrWhiteSpace(user.Photo))
+                {
+                    pictureBox1.Image = Image.FromFile(Helper.PathBaseUrlImage + user.Photo);   
+                }
             }
         }
 
@@ -153,6 +161,15 @@ namespace EsemkaHRSystem.Desktop
 
                 pictureBox1.Image = new System.Drawing.Bitmap(selectedImage);
             }
+        }
+
+        private void cbCountry_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cbCity.DataSource = Cities.Where(x => x.CountryID == int.Parse(cbCountry.SelectedValue.ToString())).ToList();
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
         }
     }
 }

@@ -1,21 +1,3 @@
-D:\GithubRepo\LKSKotang2024\Desktop\EsemkaHRSystem.Desktop\EsemkaHRSystem.Desktop\bin\Debug\EsemkaHRSystem.Desktop.exe.config
-D:\GithubRepo\LKSKotang2024\Desktop\EsemkaHRSystem.Desktop\EsemkaHRSystem.Desktop\bin\Debug\EsemkaHRSystem.Desktop.exe
-D:\GithubRepo\LKSKotang2024\Desktop\EsemkaHRSystem.Desktop\EsemkaHRSystem.Desktop\bin\Debug\EsemkaHRSystem.Desktop.pdb
-D:\GithubRepo\LKSKotang2024\Desktop\EsemkaHRSystem.Desktop\EsemkaHRSystem.Desktop\obj\Debug\EsemkaHRSystem.Desktop.csproj.AssemblyReference.cache
-D:\GithubRepo\LKSKotang2024\Desktop\EsemkaHRSystem.Desktop\EsemkaHRSystem.Desktop\obj\Debug\EsemkaHRSystem.Desktop.LoginForm.resources
-D:\GithubRepo\LKSKotang2024\Desktop\EsemkaHRSystem.Desktop\EsemkaHRSystem.Desktop\obj\Debug\EsemkaHRSystem.Desktop.Properties.Resources.resources
-D:\GithubRepo\LKSKotang2024\Desktop\EsemkaHRSystem.Desktop\EsemkaHRSystem.Desktop\obj\Debug\EsemkaHRSystem.Desktop.csproj.GenerateResource.cache
-D:\GithubRepo\LKSKotang2024\Desktop\EsemkaHRSystem.Desktop\EsemkaHRSystem.Desktop\obj\Debug\EsemkaHRSystem.Desktop.csproj.CoreCompileInputs.cache
-D:\GithubRepo\LKSKotang2024\Desktop\EsemkaHRSystem.Desktop\EsemkaHRSystem.Desktop\obj\Debug\EsemkaHRSystem.Desktop.exe
-D:\GithubRepo\LKSKotang2024\Desktop\EsemkaHRSystem.Desktop\EsemkaHRSystem.Desktop\obj\Debug\EsemkaHRSystem.Desktop.pdb
-D:\GithubRepo\LKSKotang2024\Desktop\EsemkaHRSystem.Desktop\EsemkaHRSystem.Desktop\obj\Debug\EsemkaHRSystem.Desktop.RegisterForm.resources
-D:\GithubRepo\LKSKotang2024\Desktop\EsemkaHRSystem.Desktop\EsemkaHRSystem.Desktop\obj\Debug\EsemkaHRSystem.Desktop.MainForm.resources
-D:\GithubRepo\LKSKotang2024\Desktop\EsemkaHRSystem.Desktop\EsemkaHRSystem.Desktop\obj\Debug\EsemkaHRSystem.Desktop.GenerateEmployeeSchedule.resources
-D:\GithubRepo\LKSKotang2024\Desktop\EsemkaHRSystem.Desktop\EsemkaHRSystem.Desktop\obj\Debug\EsemkaHRSystem.Desktop.MasterCityForm.resources
-D:\GithubRepo\LKSKotang2024\Desktop\EsemkaHRSystem.Desktop\EsemkaHRSystem.Desktop\obj\Debug\EsemkaHRSystem.Desktop.MasterCountryForm.resources
-D:\GithubRepo\LKSKotang2024\Desktop\EsemkaHRSystem.Desktop\EsemkaHRSystem.Desktop\obj\Debug\EsemkaHRSystem.Desktop.MasterEmployeeForm.resources
-D:\GithubRepo\LKSKotang2024\Desktop\EsemkaHRSystem.Desktop\EsemkaHRSystem.Desktop\obj\Debug\EsemkaHRSystem.Desktop.MyProfileForm.resources
-D:\GithubRepo\LKSKotang2024\Desktop\EsemkaHRSystem.Desktop\EsemkaHRSystem.Desktop\obj\Debug\EsemkaHRSystem.Desktop.MyScheduleForm.resources
 D:\Github Repositories\LKSKotang2024\Desktop\EsemkaHRSystem.Desktop\EsemkaHRSystem.Desktop\bin\Debug\EsemkaHRSystem.Desktop.exe.config
 D:\Github Repositories\LKSKotang2024\Desktop\EsemkaHRSystem.Desktop\EsemkaHRSystem.Desktop\bin\Debug\EsemkaHRSystem.Desktop.exe
 D:\Github Repositories\LKSKotang2024\Desktop\EsemkaHRSystem.Desktop\EsemkaHRSystem.Desktop\bin\Debug\EsemkaHRSystem.Desktop.pdb
@@ -34,5 +16,4 @@ D:\Github Repositories\LKSKotang2024\Desktop\EsemkaHRSystem.Desktop\EsemkaHRSyst
 D:\Github Repositories\LKSKotang2024\Desktop\EsemkaHRSystem.Desktop\EsemkaHRSystem.Desktop\obj\Debug\EsemkaHRSystem.Desktop.csproj.CoreCompileInputs.cache
 D:\Github Repositories\LKSKotang2024\Desktop\EsemkaHRSystem.Desktop\EsemkaHRSystem.Desktop\obj\Debug\EsemkaHRSystem.Desktop.exe
 D:\Github Repositories\LKSKotang2024\Desktop\EsemkaHRSystem.Desktop\EsemkaHRSystem.Desktop\obj\Debug\EsemkaHRSystem.Desktop.pdb
-D:\GithubRepo\LKSKotang2024\Desktop\EsemkaHRSystem.Desktop\EsemkaHRSystem.Desktop\obj\Debug\EsemkaHRSystem.Desktop.MasterJobForm.resources
 D:\Github Repositories\LKSKotang2024\Desktop\EsemkaHRSystem.Desktop\EsemkaHRSystem.Desktop\obj\Debug\EsemkaHRSystem.Desktop.MasterJobForm.resources
