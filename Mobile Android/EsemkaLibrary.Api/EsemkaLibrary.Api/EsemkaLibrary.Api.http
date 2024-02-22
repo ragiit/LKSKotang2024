@@ -1,0 +1,6 @@
+@EsemkaLibrary.Api_HostAddress = http://localhost:5008
+
+GET {{EsemkaLibrary.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

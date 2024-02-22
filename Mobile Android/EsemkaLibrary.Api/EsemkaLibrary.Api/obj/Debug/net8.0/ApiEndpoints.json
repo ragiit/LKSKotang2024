@@ -1,0 +1,122 @@
+[
+  {
+    "ContainingType": "EsemkaLibrary.Api.Controllers.EsemkaLibraryController",
+    "Method": "BooksGet",
+    "RelativePath": "api/books",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EsemkaLibrary.Api.Controllers.EsemkaLibraryController",
+    "Method": "BookPopularGet",
+    "RelativePath": "api/books-popular",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EsemkaLibrary.Api.Controllers.EsemkaLibraryController",
+    "Method": "BookmarkPost",
+    "RelativePath": "api/books/{id}/bookmark",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EsemkaLibrary.Api.Controllers.EsemkaLibraryController",
+    "Method": "BookDetailGet",
+    "RelativePath": "api/books/{id}/detail",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EsemkaLibrary.Api.Controllers.EsemkaLibraryController",
+    "Method": "BookLikePost",
+    "RelativePath": "api/books/{id}/like-book",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EsemkaLibrary.Api.Controllers.EsemkaLibraryController",
+    "Method": "LoginPost",
+    "RelativePath": "api/login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "req",
+        "Type": "EsemkaLibrary.Api.Controllers.LoginDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EsemkaLibrary.Api.Controllers.EsemkaLibraryController",
+    "Method": "MeGet",
+    "RelativePath": "api/me",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EsemkaLibrary.Api.Controllers.EsemkaLibraryController",
+    "Method": "BookmarksGet",
+    "RelativePath": "api/my-bookmarks",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EsemkaLibrary.Api.Controllers.EsemkaLibraryController",
+    "Method": "RegisterPost",
+    "RelativePath": "api/register",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "req",
+        "Type": "EsemkaLibrary.Api.Controllers.RegisterDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]
