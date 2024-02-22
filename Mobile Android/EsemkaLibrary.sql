@@ -37,7 +37,7 @@ CREATE TABLE Users (
     Username VARCHAR(50),
     Password VARCHAR(100),
 	FullName VARCHAR(200),
-	DateOfBirth DATE,
+	DateOfBirth DATETIME2,
 	Signature VARCHAR(1000),
     JoinDate DATETIME2 DEFAULT CURRENT_TIMESTAMP NOT NULL, 
 );
@@ -46,7 +46,7 @@ CREATE TABLE Bookmarks (
     ID INT PRIMARY KEY IDENTITY,
     UserID INT,
     BookID INT,
-    BookmarkDate DATE,
+    BookmarkDate DATETIME2,
     FOREIGN KEY (UserID) REFERENCES Users(ID),
     FOREIGN KEY (BookID) REFERENCES Books(ID)
 );
@@ -55,7 +55,7 @@ CREATE TABLE BookLikes (
     ID INT PRIMARY KEY IDENTITY,
     UserID INT,
     BookID INT,
-    LikeDate DATE,
+    LikeDate DATETIME2,
     FOREIGN KEY (UserID) REFERENCES Users(ID),
     FOREIGN KEY (BookID) REFERENCES Books(ID)
 );
@@ -76,15 +76,16 @@ INSERT INTO BookCategories (CategoryName) VALUES
 
 -- Inserting data into the Books table
 INSERT INTO Books (Title, Author, PublicationYear, ISBN, Cover) VALUES
-('To Kill a Mockingbird', 'Harper Lee', 1960, '9780061120084', 'https://example.com/to_kill_a_mockingbird.jpg'),
-('1984', 'George Orwell', 1949, '9780451524935', 'https://example.com/1984.jpg'),
-('Pride and Prejudice', 'Jane Austen', 1813, '9780141439518', 'https://example.com/pride_and_prejudice.jpg'),
-('The Great Gatsby', 'F. Scott Fitzgerald', 1925, '9780743273565', 'https://example.com/the_great_gatsby.jpg'),
-('The Catcher in the Rye', 'J.D. Salinger', 1951, '9780316769488', 'https://example.com/the_catcher_in_the_rye.jpg'),
-('To the Lighthouse', 'Virginia Woolf', 1927, '9780156907392', 'https://example.com/to_the_lighthouse.jpg'),
-('Moby-Dick', 'Herman Melville', 1851, '9780142437247', 'https://example.com/moby_dick.jpg'),
-('Frankenstein', 'Mary Shelley', 1818, '9780199537150', 'https://example.com/frankenstein.jpg'),
-('The Picture of Dorian Gray', 'Oscar Wilde', 1890, '9780141439570', 'https://example.com/the_picture_of_dorian_gray.jpg');
+('To Kill a Mockingbird', 'Harper Lee', 1960, '9780061120084', 'To_Kill_a_Mockingbird.jpeg'),
+('1984', 'George Orwell', 1949, '9780451524935', '1984.jpeg'),
+('Pride and Prejudice', 'Jane Austen', 1813, '9780141439518', 'Pride.jpeg'),
+('The Great Gatsby', 'F. Scott Fitzgerald', 1925, '9780743273565', 'Gatsby.jpeg'),
+('The Catcher in the Rye', 'J.D. Salinger', 1951, '9780316769488', 'TheCatcher.jpeg'),
+('To the Lighthouse', 'Virginia Woolf', 1927, '9780156907392', 'To_the_Lighthouse.jpeg'),
+('Moby', 'Herman Melville', 1851, '9780142437247', 'Moby.jpeg'),
+('Frankenstein', 'Mary Shelley', 1818, '9780199537150', 'Frankenstein.jpeg'),
+('The Picture of Dorian Gray', 'Oscar Wilde', 1890, '9780141439570', 'The_Picture_of_Dorian_Gray.jpeg');
+
 
 -- Inserting data into the BookDetails table
 INSERT INTO BookDetails (BookID, CategoryID) VALUES
@@ -96,11 +97,11 @@ INSERT INTO BookDetails (BookID, CategoryID) VALUES
 (4, 11), -- The Great Gatsby - Sports
 (5, 1), -- The Catcher in the Rye - Fiction
 (6, 1), -- To the Lighthouse - Fiction
-(7, 1), -- Moby-Dick - Fiction
+(7, 1), -- Moby - Fiction
 (8, 2), -- Frankenstein - Fiction
 (9, 1), -- The Picture of Dorian Gray - Fiction
 (6, 10), -- To the Lighthouse - Art
-(7, 11), -- Moby-Dick - Sports
+(7, 11), -- Moby - Sports
 (8, 1), -- Frankenstein - Horror
 (9, 2); -- The Picture of Dorian Gray - Drama
  
@@ -120,7 +121,7 @@ INSERT INTO BookContent (BookID, Content) VALUES
 (5, 'Throughout his journey, Holden encounters various characters, including his younger sister Phoebe, a former teacher Mr. Antolini, and a prostitute named Sunny. Each interaction sheds light on different aspects of Holden''s personality and worldview.'),
 (6, 'To the Lighthouse is a novel that centers on the Ramsay family and their visits to the Isle of Skye in Scotland between 1910 and 1920. The novel explores themes of love, marriage, creativity, and the passage of time. It is divided into three parts: "The Window," "Time Passes," and "The Lighthouse."'),
 (6, 'In "The Window," the Ramsay family and their guests spend the summer at their vacation home on the Isle of Skye. Mrs. Ramsay, the matriarch of the family, organizes a trip to the lighthouse, but the journey is postponed due to bad weather. During this time, the characters reflect on their relationships and aspirations.'),
-(7, 'Moby-Dick is a novel by Herman Melville that tells the story of Captain Ahab''s quest for revenge on the white whale Moby Dick, which had previously destroyed his ship and severed his leg at the knee. The novel is famous for its extensive descriptions of whaling and maritime life, as well as its philosophical reflections on fate, obsession, and the nature of evil.'),
+(7, 'Moby is a novel by Herman Melville that tells the story of Captain Ahab''s quest for revenge on the white whale Moby, which had previously destroyed his ship and severed his leg at the knee. The novel is famous for its extensive descriptions of whaling and maritime life, as well as its philosophical reflections on fate, obsession, and the nature of evil.'),
 (7, 'The narrative follows Ishmael, a sailor on Ahab''s ship, the Pequod, as he recounts his experiences and observations during the voyage. As the crew hunts the elusive whale across the oceans, tensions rise and conflicts emerge among the diverse group of characters onboard.'),
 (8, 'Frankenstein; or, The Modern Prometheus is a novel written by English author Mary Shelley that tells the story of Victor Frankenstein, a young scientist who creates a sapient creature in an unorthodox scientific experiment. The creature, often mistakenly referred to as "Frankenstein," is abandoned by his creator and left to fend for himself in a hostile world.'),
 (8, 'The novel explores themes of ambition, responsibility, and the consequences of scientific discovery. Victor Frankenstein becomes consumed by guilt and remorse as he witnesses the havoc wreaked by his creation, while the creature grapples with his own identity and seeks acceptance from society.'),

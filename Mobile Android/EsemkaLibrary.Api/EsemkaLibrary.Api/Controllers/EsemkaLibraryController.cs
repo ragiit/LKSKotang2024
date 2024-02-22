@@ -60,7 +60,67 @@ namespace EsemkaLibrary.Api.Controllers
             return Ok();
         }
 
-        string GenerateToken(string username, string id)
+        [HttpGet("users")]
+        public async Task<IActionResult> UsersGet()
+        {
+            var userId = Convert.ToInt32(User.Claims.FirstOrDefault(c => c.Type == System.Security.Claims.ClaimTypes.NameIdentifier)?.Value);
+            var users = await _context.Users.Where(x => x.Id != userId).AsNoTracking().ToListAsync();
+
+            return Ok(users);
+        }
+
+        [Authorize]
+        [HttpPost("books/{id:int}/like-book")]
+        public async Task<IActionResult> BookLikePost(int id)
+        {
+            var book = await _context.Books.Include(x => x.Categories).Include(x => x.BookContents).AsNoTracking().FirstOrDefaultAsync(x => x.Id == id);
+            if (book is null)
+                return NotFound();
+
+            var userId = Convert.ToInt32(User.Claims.FirstOrDefault(c => c.Type == System.Security.Claims.ClaimTypes.NameIdentifier)?.Value);
+
+            var check = await _context.BookLikes.FirstOrDefaultAsync(x => x.UserId == userId);
+            if (check is null)
+                await _context.BookLikes.AddAsync(new BookLike
+                {
+                    LikeDate = DateTime.Now,
+                    BookId = id,
+                    UserId = userId,
+                });
+            else
+                _context.BookLikes.Remove(check);
+
+            await _context.SaveChangesAsync();
+
+            return Ok();
+        }
+
+        [Authorize]
+        [HttpPost("books/{id:int}/bookmark")]
+        public async Task<IActionResult> BookmarkPost(int id)
+        {
+            var book = await _context.Books.Include(x => x.Categories).Include(x => x.BookContents).AsNoTracking().FirstOrDefaultAsync(x => x.Id == id);
+            if (book is null)
+                return NotFound();
+
+            var userId = Convert.ToInt32(User.Claims.FirstOrDefault(c => c.Type == System.Security.Claims.ClaimTypes.NameIdentifier)?.Value);
+
+            var check = await _context.Bookmarks.FirstOrDefaultAsync(x => x.UserId == userId);
+            if (check is null)
+                await _context.Bookmarks.AddAsync(new Bookmark
+                {
+                    BookmarkDate = DateTime.Now,
+                    BookId = id,
+                    UserId = userId,
+                });
+            else
+                _context.Bookmarks.Remove(check);
+
+            await _context.SaveChangesAsync();
+
+            return Ok();
+        }
+        private string GenerateToken(string username, string id)
         {
             var tokenHandler = new JwtSecurityTokenHandler();
             var key = Encoding.UTF8.GetBytes("this is my custom Secret key for authentication");
@@ -96,13 +156,11 @@ namespace EsemkaLibrary.Api.Controllers
             return Ok(user);
         }
 
-         
-
         [Authorize]
         [HttpGet("books")]
         public async Task<IActionResult> BooksGet()
         {
-            var books = await _context.Books.AsNoTracking().ToListAsync();
+            var books = await _context.Books.Include(x => x.Categories).Include(x => x.BookContents).AsNoTracking().ToListAsync();
 
             return Ok(books);
         }
@@ -111,61 +169,9 @@ namespace EsemkaLibrary.Api.Controllers
         [HttpGet("books/{id:int}/detail")]
         public async Task<IActionResult> BookDetailGet(int id)
         {
-            var books = await _context.Books.AsNoTracking().FirstOrDefaultAsync(x => x.Id == id);
+            var books = await _context.Books.Include(x => x.Categories).Include(x => x.BookContents).AsNoTracking().FirstOrDefaultAsync(x => x.Id == id);
 
             return Ok(books);
-        }
-
-        [Authorize]
-        [HttpPost("books/{id:int}/like-book")]
-        public async Task<IActionResult> BookLikePost(int id)
-        {
-            var book = await _context.Books.AsNoTracking().FirstOrDefaultAsync(x => x.Id == id);
-            if (book is null)
-                return NotFound();
-
-            var userId = Convert.ToInt32(User.Claims.FirstOrDefault(c => c.Type == System.Security.Claims.ClaimTypes.NameIdentifier)?.Value);
-
-            var check = await _context.BookLikes.FirstOrDefaultAsync(x => x.UserId == userId);
-            if (check is null)
-                await _context.BookLikes.AddAsync(new BookLike
-                {
-                    LikeDate = DateTime.Now,
-                    BookId = id,
-                    UserId = userId,
-                });
-            else
-                _context.BookLikes.Remove(check);
-
-            await _context.SaveChangesAsync();
-
-            return Ok();
-        }
-
-        [Authorize]
-        [HttpPost("books/{id:int}/bookmark")]
-        public async Task<IActionResult> BookmarkPost(int id)
-        {
-            var book = await _context.Books.AsNoTracking().FirstOrDefaultAsync(x => x.Id == id);
-            if (book is null)
-                return NotFound();
-
-            var userId = Convert.ToInt32(User.Claims.FirstOrDefault(c => c.Type == System.Security.Claims.ClaimTypes.NameIdentifier)?.Value);
-
-            var check = await _context.Bookmarks.FirstOrDefaultAsync(x => x.UserId == userId);
-            if (check is null)
-                await _context.Bookmarks.AddAsync(new Bookmark
-                {
-                    BookmarkDate = DateTime.Now,
-                    BookId = id,
-                    UserId = userId,
-                });
-            else
-                _context.Bookmarks.Remove(check);
-
-            await _context.SaveChangesAsync();
-
-            return Ok();
         }
 
         [Authorize]
@@ -176,34 +182,44 @@ namespace EsemkaLibrary.Api.Controllers
 
             var bookmarks = await _context.Bookmarks.AsNoTracking().Where(x => x.UserId == userId).Select(x => x.BookId).ToListAsync();
 
-            var books = await _context.Books.Where(x=> bookmarks.Contains(x.Id)).AsNoTracking().ToListAsync();
+            var books = await _context.Books.Where(x => bookmarks.Contains(x.Id)).AsNoTracking().ToListAsync();
 
             return Ok(books);
+        }
+
+        private class BookTemp
+        {
+            public int Id { get; set; }
+            public int Count { get; set; }
         }
 
         [Authorize]
         [HttpGet("books-popular")]
         public async Task<IActionResult> BookPopularGet()
         {
-            var popularBooks = await _context.BookLikes
-                 .GroupBy(bl => bl.BookId)
-                 .Select(group => new
-                 {
-                     BookId = group.Key,
-                     TotalLikes = group.Count()
-                 })
-                 .OrderByDescending(x => x.TotalLikes)
-                 .Take(3)
-                 .ToListAsync();
+            var temp = new List<BookTemp>();
 
-            var top3BookIds = popularBooks.Select(x => x.BookId).ToList();
+            var books = await _context.Books.Include(x => x.BookContents).Include(x => x.Categories).AsNoTracking().ToListAsync();
+            var bookLikes = await _context.BookLikes.AsNoTracking().ToListAsync();
 
-            var top3Books = await _context.Books
-                .Where(b => top3BookIds.Contains(b.Id))
-                .AsNoTracking()
-                .ToListAsync();
+            foreach (var item in books)
+            {
+                temp.Add(new BookTemp
+                {
+                    Id = item.Id,
+                    Count = bookLikes.Where(x => x.BookId == item.Id).Count(),
+                });
+            }
 
-            return Ok(top3Books);
+            var temps = temp.OrderByDescending(x => x.Count).Take(3).Select(x => x.Id);
+
+            var q = new List<Book>();
+            foreach (var item in temps)
+            {
+                q.Add(books.FirstOrDefault(x => x.Id == item)!);
+            }
+
+            return Ok(q);
         }
     }
 
@@ -211,13 +227,15 @@ namespace EsemkaLibrary.Api.Controllers
     {
         [Required]
         public string? Username { get; set; } = string.Empty;
+
         [Required]
         public string? Password { get; set; } = string.Empty;
+
         [Required]
         public string? FullName { get; set; } = string.Empty;
 
         public string? Signature { get; set; }
-
+        public DateTime? DateOfBirth { get; set; }
     }
 
     public class LoginDto

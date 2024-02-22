@@ -27,14 +27,14 @@ public partial class EsemkaLibraryContext : DbContext
 
     public virtual DbSet<User> Users { get; set; }
 
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) 
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         => optionsBuilder.UseSqlServer("Server=.\\ITSSB;Database=EsemkaLibrary;Trusted_Connection=True;TrustServerCertificate=True");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<Book>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Books__3214EC271AFA104E");
+            entity.HasKey(e => e.Id).HasName("PK__Books__3214EC2781244C67");
 
             entity.Property(e => e.Id).HasColumnName("ID");
             entity.Property(e => e.Author)
@@ -73,7 +73,7 @@ public partial class EsemkaLibraryContext : DbContext
 
         modelBuilder.Entity<BookCategory>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__BookCate__3214EC272F2A8CF7");
+            entity.HasKey(e => e.Id).HasName("PK__BookCate__3214EC275A6A38BE");
 
             entity.Property(e => e.Id).HasColumnName("ID");
             entity.Property(e => e.CategoryName)
@@ -83,7 +83,7 @@ public partial class EsemkaLibraryContext : DbContext
 
         modelBuilder.Entity<BookContent>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__BookCont__3214EC27E0BDD386");
+            entity.HasKey(e => e.Id).HasName("PK__BookCont__3214EC27E64C791F");
 
             entity.ToTable("BookContent");
 
@@ -98,7 +98,7 @@ public partial class EsemkaLibraryContext : DbContext
 
         modelBuilder.Entity<BookLike>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__BookLike__3214EC27379D98BF");
+            entity.HasKey(e => e.Id).HasName("PK__BookLike__3214EC27F5A6F711");
 
             entity.Property(e => e.Id).HasColumnName("ID");
             entity.Property(e => e.BookId).HasColumnName("BookID");
@@ -115,7 +115,7 @@ public partial class EsemkaLibraryContext : DbContext
 
         modelBuilder.Entity<Bookmark>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Bookmark__3214EC27DC2B8133");
+            entity.HasKey(e => e.Id).HasName("PK__Bookmark__3214EC2701675AF7");
 
             entity.Property(e => e.Id).HasColumnName("ID");
             entity.Property(e => e.BookId).HasColumnName("BookID");
@@ -132,7 +132,7 @@ public partial class EsemkaLibraryContext : DbContext
 
         modelBuilder.Entity<User>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Users__3214EC2724E300C6");
+            entity.HasKey(e => e.Id).HasName("PK__Users__3214EC2716DDEDAC");
 
             entity.Property(e => e.Id).HasColumnName("ID");
             entity.Property(e => e.FullName)

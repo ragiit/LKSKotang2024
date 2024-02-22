@@ -1,24 +1,19 @@
-using Azure.Identity;
 using EsemkaLibrary.Api.Models;
-using Mapster;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
-using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
-using System.ComponentModel.DataAnnotations;
-using System.IdentityModel.Tokens.Jwt;
-using System.Security.Claims;
 using System.Text;
+using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-
 builder.Services.AddControllers();
 builder.Services.AddDbContext<EsemkaLibraryContext>();
+
+builder.Services.AddControllers().AddJsonOptions(options =>
+{
+    options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
+    options.JsonSerializerOptions.WriteIndented = true;
+});
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(options =>
@@ -35,19 +30,19 @@ builder.Services.AddSwaggerGen(options =>
 
     // Define the operation security requirements
     options.AddSecurityRequirement(new OpenApiSecurityRequirement
+    {
+        {
+            new OpenApiSecurityScheme
+            {
+                Reference = new OpenApiReference
                 {
-                    {
-                        new OpenApiSecurityScheme
-                        {
-                            Reference = new OpenApiReference
-                            {
-                                Type = ReferenceType.SecurityScheme,
-                                Id = "Bearer"
-                            }
-                        },
-                        new List<string>()
-                    }
-                });
+                    Type = ReferenceType.SecurityScheme,
+                    Id = "Bearer"
+                }
+            },
+            new List<string>()
+        }
+    });
 });
 builder.Services.AddHttpContextAccessor();
 
@@ -74,12 +69,13 @@ builder.Services.AddAuthorization();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseStaticFiles();
 
 app.UseHttpsRedirection();
 
@@ -88,31 +84,4 @@ app.UseAuthorization();
 
 app.MapControllers();
 
-
-
-
-
-
-//app.MapPost("/login", async (LoginDto req, EsemkaLibraryContext db, CancellationToken cancellationToken = default) =>
-//{
-//   
-//});
-
-
-
-
-//app.MapGet("/me", async (EsemkaLibraryContext db, HttpContext httpContext, CancellationToken cancellationToken = default) =>
-//{
-//    
-
-//}).RequireAuthorization();
-
-//app.MapGet("/books", async ( EsemkaLibraryContext db, CancellationToken cancellationToken = default) =>
-//{
-//    
-//}).RequireAuthorization();
-
-
 app.Run();
-
-
