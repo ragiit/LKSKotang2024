@@ -1,17 +1,21 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\Github Repositories\\LKSKotang2024\\Mobile Android\\EsemkaLibrary.Api\\",
+  "WorkspaceRootPath": "D:\\Github Repositories\\LKSKotang2024_2\\Mobile Android\\EsemkaLibrary.Api\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{DDA18C63-2EBB-48DB-972D-D64762A2295C}|EsemkaLibrary.Api\\EsemkaLibrary.Api.csproj|d:\\github repositories\\lkskotang2024\\mobile android\\esemkalibrary.api\\esemkalibrary.api\\controllers\\esemkalibrarycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{DDA18C63-2EBB-48DB-972D-D64762A2295C}|EsemkaLibrary.Api\\EsemkaLibrary.Api.csproj|d:\\github repositories\\lkskotang2024_2\\mobile android\\esemkalibrary.api\\esemkalibrary.api\\controllers\\esemkalibrarycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DDA18C63-2EBB-48DB-972D-D64762A2295C}|EsemkaLibrary.Api\\EsemkaLibrary.Api.csproj|solutionrelative:esemkalibrary.api\\controllers\\esemkalibrarycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DDA18C63-2EBB-48DB-972D-D64762A2295C}|EsemkaLibrary.Api\\EsemkaLibrary.Api.csproj|d:\\github repositories\\lkskotang2024\\mobile android\\esemkalibrary.api\\esemkalibrary.api\\models\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{DDA18C63-2EBB-48DB-972D-D64762A2295C}|EsemkaLibrary.Api\\EsemkaLibrary.Api.csproj|d:\\github repositories\\lkskotang2024_2\\mobile android\\esemkalibrary.api\\esemkalibrary.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{DDA18C63-2EBB-48DB-972D-D64762A2295C}|EsemkaLibrary.Api\\EsemkaLibrary.Api.csproj|solutionrelative:esemkalibrary.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DDA18C63-2EBB-48DB-972D-D64762A2295C}|EsemkaLibrary.Api\\EsemkaLibrary.Api.csproj|d:\\github repositories\\lkskotang2024_2\\mobile android\\esemkalibrary.api\\esemkalibrary.api\\models\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DDA18C63-2EBB-48DB-972D-D64762A2295C}|EsemkaLibrary.Api\\EsemkaLibrary.Api.csproj|solutionrelative:esemkalibrary.api\\models\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DDA18C63-2EBB-48DB-972D-D64762A2295C}|EsemkaLibrary.Api\\EsemkaLibrary.Api.csproj|d:\\github repositories\\lkskotang2024\\mobile android\\esemkalibrary.api\\esemkalibrary.api\\esemkalibrary.api.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
+      "AbsoluteMoniker": "D:0:0:{DDA18C63-2EBB-48DB-972D-D64762A2295C}|EsemkaLibrary.Api\\EsemkaLibrary.Api.csproj|d:\\github repositories\\lkskotang2024_2\\mobile android\\esemkalibrary.api\\esemkalibrary.api\\esemkalibrary.api.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
       "RelativeMoniker": "D:0:0:{DDA18C63-2EBB-48DB-972D-D64762A2295C}|EsemkaLibrary.Api\\EsemkaLibrary.Api.csproj|solutionrelative:esemkalibrary.api\\esemkalibrary.api.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
     }
   ],
@@ -22,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -30,42 +34,53 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\Github Repositories\\LKSKotang2024_2\\Mobile Android\\EsemkaLibrary.Api\\EsemkaLibrary.Api\\appsettings.json",
+              "RelativeDocumentMoniker": "EsemkaLibrary.Api\\appsettings.json",
+              "ToolTip": "D:\\Github Repositories\\LKSKotang2024_2\\Mobile Android\\EsemkaLibrary.Api\\EsemkaLibrary.Api\\appsettings.json",
+              "RelativeToolTip": "EsemkaLibrary.Api\\appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-02-23T02:13:36.74Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
               "Title": "EsemkaLibraryController.cs",
-              "DocumentMoniker": "D:\\Github Repositories\\LKSKotang2024\\Mobile Android\\EsemkaLibrary.Api\\EsemkaLibrary.Api\\Controllers\\EsemkaLibraryController.cs",
+              "DocumentMoniker": "D:\\Github Repositories\\LKSKotang2024_2\\Mobile Android\\EsemkaLibrary.Api\\EsemkaLibrary.Api\\Controllers\\EsemkaLibraryController.cs",
               "RelativeDocumentMoniker": "EsemkaLibrary.Api\\Controllers\\EsemkaLibraryController.cs",
-              "ToolTip": "D:\\Github Repositories\\LKSKotang2024\\Mobile Android\\EsemkaLibrary.Api\\EsemkaLibrary.Api\\Controllers\\EsemkaLibraryController.cs",
+              "ToolTip": "D:\\Github Repositories\\LKSKotang2024_2\\Mobile Android\\EsemkaLibrary.Api\\EsemkaLibrary.Api\\Controllers\\EsemkaLibraryController.cs",
               "RelativeToolTip": "EsemkaLibrary.Api\\Controllers\\EsemkaLibraryController.cs",
-              "ViewState": "AQIAALIAAAAAAAAAAAAYwMMAAAAZAAAA",
+              "ViewState": "AQIAAMAAAAAAAAAAAAAswNIAAAATAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-02-22T11:41:11.181Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "EsemkaLibrary.Api.http",
-              "DocumentMoniker": "D:\\Github Repositories\\LKSKotang2024\\Mobile Android\\EsemkaLibrary.Api\\EsemkaLibrary.Api\\EsemkaLibrary.Api.http",
+              "DocumentMoniker": "D:\\Github Repositories\\LKSKotang2024_2\\Mobile Android\\EsemkaLibrary.Api\\EsemkaLibrary.Api\\EsemkaLibrary.Api.http",
               "RelativeDocumentMoniker": "EsemkaLibrary.Api\\EsemkaLibrary.Api.http",
-              "ToolTip": "D:\\Github Repositories\\LKSKotang2024\\Mobile Android\\EsemkaLibrary.Api\\EsemkaLibrary.Api\\EsemkaLibrary.Api.http",
+              "ToolTip": "D:\\Github Repositories\\LKSKotang2024_2\\Mobile Android\\EsemkaLibrary.Api\\EsemkaLibrary.Api\\EsemkaLibrary.Api.http",
               "RelativeToolTip": "EsemkaLibrary.Api\\EsemkaLibrary.Api.http",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
-              "WhenOpened": "2024-02-22T11:41:05.495Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-02-22T11:41:05.495Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Book.cs",
-              "DocumentMoniker": "D:\\Github Repositories\\LKSKotang2024\\Mobile Android\\EsemkaLibrary.Api\\EsemkaLibrary.Api\\Models\\Book.cs",
+              "DocumentMoniker": "D:\\Github Repositories\\LKSKotang2024_2\\Mobile Android\\EsemkaLibrary.Api\\EsemkaLibrary.Api\\Models\\Book.cs",
               "RelativeDocumentMoniker": "EsemkaLibrary.Api\\Models\\Book.cs",
-              "ToolTip": "D:\\Github Repositories\\LKSKotang2024\\Mobile Android\\EsemkaLibrary.Api\\EsemkaLibrary.Api\\Models\\Book.cs",
+              "ToolTip": "D:\\Github Repositories\\LKSKotang2024_2\\Mobile Android\\EsemkaLibrary.Api\\EsemkaLibrary.Api\\Models\\Book.cs",
               "RelativeToolTip": "EsemkaLibrary.Api\\Models\\Book.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-22T11:41:04.617Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-02-22T11:41:04.617Z"
             }
           ]
         },

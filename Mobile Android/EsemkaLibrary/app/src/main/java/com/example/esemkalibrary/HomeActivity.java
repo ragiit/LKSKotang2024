@@ -19,6 +19,7 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityHomeBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        switchFragment(new HomeFragment());
 
         binding.bottomNavigation.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override

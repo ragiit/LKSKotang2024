@@ -118,5 +118,15 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EsemkaLibrary.Api.Controllers.EsemkaLibraryController",
+    "Method": "UsersGet",
+    "RelativePath": "api/users",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
   }
 ]
