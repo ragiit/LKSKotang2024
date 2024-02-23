@@ -142,7 +142,7 @@ public partial class EsemkaLibraryContext : DbContext
             entity.Property(e => e.Password)
                 .HasMaxLength(100)
                 .IsUnicode(false);
-            entity.Property(e => e.Signature)
+            entity.Property(e => e.Motto)
                 .HasMaxLength(1000)
                 .IsUnicode(false);
             entity.Property(e => e.Username)

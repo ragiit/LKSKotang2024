@@ -11,7 +11,8 @@ import java.net.URL;
 
 public class Helper extends AsyncTask<String, Void, String> {
 
-    private  static  String BASE_URL = "http://10.0.2.2:5008/api/";
+    private  static  String BASE_URL_API = "http://10.0.2.2:5008/api/";
+    public  static  String BASE_URL_IMAGE = "http://10.0.2.2:5008/images/";
     public static  String jwtToken = "";
     private static final String TAG = "HttpHelper";
     private HttpCallback callback;
@@ -27,7 +28,7 @@ public class Helper extends AsyncTask<String, Void, String> {
 
     @Override
     protected String doInBackground(String... params) {
-        String urlString = BASE_URL +  params[0];
+        String urlString = BASE_URL_API +  params[0];
         String method = params[1];
         String data = params[2];
         String result = "";

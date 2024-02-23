@@ -39,8 +39,6 @@ public class LoginActivity extends AppCompatActivity {
             httpHelper.setHttpCallback(new Helper.HttpCallback() {
                 @Override
                 public void onSuccess(String result) {
-                    Toast.makeText(LoginActivity.this, result, Toast.LENGTH_SHORT).show();
-
                     try {
                         JSONObject jsonObject = new JSONObject(result);
                         Helper.jwtToken = jsonObject.getString("token");
@@ -54,7 +52,7 @@ public class LoginActivity extends AppCompatActivity {
 
                 @Override
                 public void onError(String error) {
-                    Toast.makeText(LoginActivity.this, "Invalid Username or Password", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoginActivity.this, "Please correct the error and try again", Toast.LENGTH_SHORT).show();
                 }
             });
 

@@ -10,24 +10,39 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+
 public class AllUsersFragment extends Fragment {
     private RecyclerView recyclerView;
-    private Ss2Adapter bookAdapter;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_all_users, container, false);
 
-        bookAdapter = new Ss2Adapter();
+        recyclerView  = view.findViewById(R.id.recyclerView);
 
-        LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
+        Helper httpHelper3 = new Helper();
+        httpHelper3.setHttpCallback(new Helper.HttpCallback() {
+            @Override
+            public void onSuccess(String result) {
+                try {
+                    Ss2Adapter adapter = new Ss2Adapter(new JSONArray(result));
+                    recyclerView.setAdapter(adapter);
+                    LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
+                    recyclerView.setLayoutManager(layoutManager);
+                } catch (JSONException e) {
+                }
+            }
 
-        recyclerView = view.findViewById(R.id.recyclerView);
+            @Override
+            public void onError(String error) {
+                // Handle error
+            }
+        });
 
-        recyclerView.setLayoutManager(layoutManager);
-
-        recyclerView.setAdapter(bookAdapter);
+        httpHelper3.execute("users", "GET", "");
 
         return  view;
     }

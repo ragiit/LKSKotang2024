@@ -10,10 +10,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+
 public class MyBookmarkFragment extends Fragment {
 
     private RecyclerView recyclerView;
-    private SsAdapter bookAdapter;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -21,15 +23,28 @@ public class MyBookmarkFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_my_bookmark, container, false);
 
-        bookAdapter = new SsAdapter();
-
-        LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
 
         recyclerView = view.findViewById(R.id.recyclerView);
 
-        recyclerView.setLayoutManager(layoutManager);
+        Helper httpHelper2 = new Helper();
+        httpHelper2.setHttpCallback(new Helper.HttpCallback() {
+            @Override
+            public void onSuccess(String result) {
+                try {
+                    SsAdapter adapter = new SsAdapter(new JSONArray(result));
+                    recyclerView.setAdapter(adapter);
+                    recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+                } catch (JSONException e) {
+                }
+            }
 
-        recyclerView.setAdapter(bookAdapter);
+            @Override
+            public void onError(String error) {
+                // Handle error
+            }
+        });
+
+        httpHelper2.execute("my-bookmarks", "GET", "");
 
         return  view;
     }

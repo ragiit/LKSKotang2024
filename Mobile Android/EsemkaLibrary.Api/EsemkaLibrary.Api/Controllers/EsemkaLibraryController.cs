@@ -9,6 +9,7 @@ using System.ComponentModel.DataAnnotations;
 using System.IdentityModel.Tokens.Jwt;
 using System.Net.Http;
 using System.Security.Claims;
+using System.Security.Cryptography.Xml;
 using System.Text;
 using System.Threading;
 
@@ -64,7 +65,18 @@ namespace EsemkaLibrary.Api.Controllers
         public async Task<IActionResult> UsersGet()
         {
             var userId = Convert.ToInt32(User.Claims.FirstOrDefault(c => c.Type == System.Security.Claims.ClaimTypes.NameIdentifier)?.Value);
-            var users = await _context.Users.Where(x => x.Id != userId).AsNoTracking().ToListAsync();
+
+            var users = await _context.Users
+                .OrderByDescending(x => x.Id == userId)
+                .Select(x => new
+                {
+                    x.Id,
+                    x.Username,
+                    x.FullName,
+                    DateOfBirth = x.DateOfBirth.GetValueOrDefault().ToString("ddd, MMM yyyy"),
+                    x.Motto,
+                    JoinDate = x.JoinDate.ToString("ddd, MMMM yyyy")
+                }).AsNoTracking().ToListAsync();
 
             return Ok(users);
         }
@@ -120,6 +132,7 @@ namespace EsemkaLibrary.Api.Controllers
 
             return Ok();
         }
+
         private string GenerateToken(string username, string id)
         {
             var tokenHandler = new JwtSecurityTokenHandler();
@@ -160,7 +173,24 @@ namespace EsemkaLibrary.Api.Controllers
         [HttpGet("books")]
         public async Task<IActionResult> BooksGet()
         {
-            var books = await _context.Books.Include(x => x.Categories).Include(x => x.BookContents).AsNoTracking().ToListAsync();
+            var books = await _context.Books
+                .Include(x => x.Categories)
+                .Include(x => x.BookContents)
+                .Include(x => x.BookLikes)
+                .AsNoTracking()
+                .Select(x => new
+                {
+                    x.Id,
+                    x.Title,
+                    x.Author,
+                    x.PublicationYear,
+                    x.Isbn,
+                    x.Cover,
+                    Content = string.Join(", ", x.BookContents.Select(z => z.Content)),
+                    Category = string.Join(", ", x.Categories.Select(z => z.CategoryName)),
+                    Likes = x.BookLikes.Count()
+                })
+                .ToListAsync();
 
             return Ok(books);
         }
@@ -169,7 +199,18 @@ namespace EsemkaLibrary.Api.Controllers
         [HttpGet("books/{id:int}/detail")]
         public async Task<IActionResult> BookDetailGet(int id)
         {
-            var books = await _context.Books.Include(x => x.Categories).Include(x => x.BookContents).AsNoTracking().FirstOrDefaultAsync(x => x.Id == id);
+            var books = await _context.Books.Include(x => x.Categories).Include(x => x.BookContents).AsNoTracking().Select(x => new
+            {
+                x.Id,
+                x.Title,
+                x.Author,
+                x.PublicationYear,
+                x.Isbn,
+                x.Cover,
+                Content = string.Join(", ", x.BookContents.Select(z => z.Content)),
+                Category = string.Join(", ", x.Categories.Select(z => z.CategoryName)),
+                Likes = x.BookLikes.Count()
+            }).FirstOrDefaultAsync(x => x.Id == id);
 
             return Ok(books);
         }
@@ -182,7 +223,18 @@ namespace EsemkaLibrary.Api.Controllers
 
             var bookmarks = await _context.Bookmarks.AsNoTracking().Where(x => x.UserId == userId).Select(x => x.BookId).ToListAsync();
 
-            var books = await _context.Books.Where(x => bookmarks.Contains(x.Id)).AsNoTracking().ToListAsync();
+            var books = await _context.Books.Where(x => bookmarks.Contains(x.Id)).Select(x => new
+            {
+                x.Id,
+                x.Title,
+                x.Author,
+                x.PublicationYear,
+                x.Isbn,
+                x.Cover,
+                Content = string.Join(", ", x.BookContents.Select(z => z.Content)),
+                Category = string.Join(", ", x.Categories.Select(z => z.CategoryName)),
+                Likes = x.BookLikes.Count()
+            }).AsNoTracking().ToListAsync();
 
             return Ok(books);
         }
@@ -199,7 +251,7 @@ namespace EsemkaLibrary.Api.Controllers
         {
             var temp = new List<BookTemp>();
 
-            var books = await _context.Books.Include(x => x.BookContents).Include(x => x.Categories).AsNoTracking().ToListAsync();
+            var books = await _context.Books.Include(x => x.BookLikes).Include(x => x.BookContents).Include(x => x.Categories).AsNoTracking().ToListAsync();
             var bookLikes = await _context.BookLikes.AsNoTracking().ToListAsync();
 
             foreach (var item in books)
@@ -219,7 +271,18 @@ namespace EsemkaLibrary.Api.Controllers
                 q.Add(books.FirstOrDefault(x => x.Id == item)!);
             }
 
-            return Ok(q);
+            return Ok(q.Select(x => new
+            {
+                x.Id,
+                x.Title,
+                x.Author,
+                x.PublicationYear,
+                x.Isbn,
+                x.Cover,
+                Content = string.Join(", ", x.BookContents.Select(z => z.Content)),
+                Category = string.Join(", ", x.Categories.Select(z => z.CategoryName)),
+                Likes = x.BookLikes.Count()
+            }));
         }
     }
 
@@ -234,7 +297,7 @@ namespace EsemkaLibrary.Api.Controllers
         [Required]
         public string? FullName { get; set; } = string.Empty;
 
-        public string? Signature { get; set; }
+        public string? Motto { get; set; }
         public DateTime? DateOfBirth { get; set; }
     }
 

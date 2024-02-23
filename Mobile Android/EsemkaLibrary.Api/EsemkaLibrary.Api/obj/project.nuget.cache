@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "LEB3OsOZDnlSQwScga2ieOUIqZFETeodvlO+OjWV4u2Q5dOzpvxIVVVXwD5OmSiyBnnTRd2PL9DWX8nPPNbjoQ==",
+  "dgSpecHash": "I0e8qvUSQy75TS+uKEunXiSmxCOd82KZLBuGrxp3s+WltT/CHD3o0MeavI87WDWeIN3KeCWT7qJDeAj8LEqdpg==",
   "success": true,
-  "projectFilePath": "D:\\Github Repositories\\LKSKotang2024_2\\Mobile Android\\EsemkaLibrary.Api\\EsemkaLibrary.Api\\EsemkaLibrary.Api.csproj",
+  "projectFilePath": "D:\\GithubRepo\\LKSKotang2024\\Mobile Android\\EsemkaLibrary.Api\\EsemkaLibrary.Api\\EsemkaLibrary.Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\argip\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\argip\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",

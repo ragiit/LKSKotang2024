@@ -35,7 +35,7 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.BookViewHolder
         holder.bookIsbn.setText("ISBN: " + book.getIsbn());
         holder.bookCategory.setText("Category: Fiction");
         holder.bookLikes.setText("Likes: 100");
-        Glide.with(context).load(book.getCover()).into(holder.bookImage);
+        Glide.with(context).load(Helper.BASE_URL_IMAGE +   book.getCover()).into(holder.bookImage);
     }
 
     @Override

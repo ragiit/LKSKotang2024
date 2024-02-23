@@ -15,7 +15,7 @@ public partial class User
 
     public DateTime? DateOfBirth { get; set; }
 
-    public string? Signature { get; set; }
+    public string? Motto { get; set; }
 
     public DateTime JoinDate { get; set; }
 
