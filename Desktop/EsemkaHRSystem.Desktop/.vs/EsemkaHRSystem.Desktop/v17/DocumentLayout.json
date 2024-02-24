@@ -1,44 +1,7 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\Github Repositories\\LKSKotang2024\\Desktop\\EsemkaHRSystem.Desktop\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{B9D71C87-2F3D-4562-9E99-4C5D910B3D77}|EsemkaHRSystem.Desktop\\EsemkaHRSystem.Desktop.csproj|D:\\Github Repositories\\LKSKotang2024\\Desktop\\EsemkaHRSystem.Desktop\\esemkahrsystem.desktop\\forms\\masteremployeeform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{B9D71C87-2F3D-4562-9E99-4C5D910B3D77}|EsemkaHRSystem.Desktop\\EsemkaHRSystem.Desktop.csproj|solutionrelative:esemkahrsystem.desktop\\forms\\masteremployeeform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B9D71C87-2F3D-4562-9E99-4C5D910B3D77}|EsemkaHRSystem.Desktop\\EsemkaHRSystem.Desktop.csproj|d:\\github repositories\\lkskotang2024\\desktop\\esemkahrsystem.desktop\\esemkahrsystem.desktop\\forms\\myprofileform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B9D71C87-2F3D-4562-9E99-4C5D910B3D77}|EsemkaHRSystem.Desktop\\EsemkaHRSystem.Desktop.csproj|solutionrelative:esemkahrsystem.desktop\\forms\\myprofileform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B9D71C87-2F3D-4562-9E99-4C5D910B3D77}|EsemkaHRSystem.Desktop\\EsemkaHRSystem.Desktop.csproj|D:\\Github Repositories\\LKSKotang2024\\Desktop\\EsemkaHRSystem.Desktop\\esemkahrsystem.desktop\\forms\\myscheduleuserconrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{B9D71C87-2F3D-4562-9E99-4C5D910B3D77}|EsemkaHRSystem.Desktop\\EsemkaHRSystem.Desktop.csproj|solutionrelative:esemkahrsystem.desktop\\forms\\myscheduleuserconrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B9D71C87-2F3D-4562-9E99-4C5D910B3D77}|EsemkaHRSystem.Desktop\\EsemkaHRSystem.Desktop.csproj|D:\\Github Repositories\\LKSKotang2024\\Desktop\\EsemkaHRSystem.Desktop\\esemkahrsystem.desktop\\forms\\myscheduleform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{B9D71C87-2F3D-4562-9E99-4C5D910B3D77}|EsemkaHRSystem.Desktop\\EsemkaHRSystem.Desktop.csproj|solutionrelative:esemkahrsystem.desktop\\forms\\myscheduleform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B9D71C87-2F3D-4562-9E99-4C5D910B3D77}|EsemkaHRSystem.Desktop\\EsemkaHRSystem.Desktop.csproj|D:\\Github Repositories\\LKSKotang2024\\Desktop\\EsemkaHRSystem.Desktop\\esemkahrsystem.desktop\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
-      "RelativeMoniker": "D:0:0:{B9D71C87-2F3D-4562-9E99-4C5D910B3D77}|EsemkaHRSystem.Desktop\\EsemkaHRSystem.Desktop.csproj|solutionrelative:esemkahrsystem.desktop\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B9D71C87-2F3D-4562-9E99-4C5D910B3D77}|EsemkaHRSystem.Desktop\\EsemkaHRSystem.Desktop.csproj|D:\\Github Repositories\\LKSKotang2024\\Desktop\\EsemkaHRSystem.Desktop\\esemkahrsystem.desktop\\forms\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{B9D71C87-2F3D-4562-9E99-4C5D910B3D77}|EsemkaHRSystem.Desktop\\EsemkaHRSystem.Desktop.csproj|solutionrelative:esemkahrsystem.desktop\\forms\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B9D71C87-2F3D-4562-9E99-4C5D910B3D77}|EsemkaHRSystem.Desktop\\EsemkaHRSystem.Desktop.csproj|D:\\Github Repositories\\LKSKotang2024\\Desktop\\EsemkaHRSystem.Desktop\\esemkahrsystem.desktop\\forms\\masterjobform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{B9D71C87-2F3D-4562-9E99-4C5D910B3D77}|EsemkaHRSystem.Desktop\\EsemkaHRSystem.Desktop.csproj|solutionrelative:esemkahrsystem.desktop\\forms\\masterjobform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B9D71C87-2F3D-4562-9E99-4C5D910B3D77}|EsemkaHRSystem.Desktop\\EsemkaHRSystem.Desktop.csproj|D:\\Github Repositories\\LKSKotang2024\\Desktop\\EsemkaHRSystem.Desktop\\esemkahrsystem.desktop\\forms\\mastercityform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{B9D71C87-2F3D-4562-9E99-4C5D910B3D77}|EsemkaHRSystem.Desktop\\EsemkaHRSystem.Desktop.csproj|solutionrelative:esemkahrsystem.desktop\\forms\\mastercityform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B9D71C87-2F3D-4562-9E99-4C5D910B3D77}|EsemkaHRSystem.Desktop\\EsemkaHRSystem.Desktop.csproj|D:\\Github Repositories\\LKSKotang2024\\Desktop\\EsemkaHRSystem.Desktop\\esemkahrsystem.desktop\\forms\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{B9D71C87-2F3D-4562-9E99-4C5D910B3D77}|EsemkaHRSystem.Desktop\\EsemkaHRSystem.Desktop.csproj|solutionrelative:esemkahrsystem.desktop\\forms\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    }
-  ],
+  "WorkspaceRootPath": "D:\\Github Repositories\\LKSKotang2024_2\\Desktop\\EsemkaHRSystem.Desktop\\",
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -46,114 +9,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": -1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "MyScheduleUserConrol.cs [Design]",
-              "DocumentMoniker": "D:\\Github Repositories\\LKSKotang2024\\Desktop\\EsemkaHRSystem.Desktop\\EsemkaHRSystem.Desktop\\Forms\\MyScheduleUserConrol.cs",
-              "RelativeDocumentMoniker": "EsemkaHRSystem.Desktop\\Forms\\MyScheduleUserConrol.cs",
-              "ToolTip": "D:\\Github Repositories\\LKSKotang2024\\Desktop\\EsemkaHRSystem.Desktop\\EsemkaHRSystem.Desktop\\Forms\\MyScheduleUserConrol.cs [Design]",
-              "RelativeToolTip": "EsemkaHRSystem.Desktop\\Forms\\MyScheduleUserConrol.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-21T02:18:07.391Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "MasterEmployeeForm.cs [Design]",
-              "DocumentMoniker": "D:\\Github Repositories\\LKSKotang2024\\Desktop\\EsemkaHRSystem.Desktop\\EsemkaHRSystem.Desktop\\Forms\\MasterEmployeeForm.cs",
-              "RelativeDocumentMoniker": "EsemkaHRSystem.Desktop\\Forms\\MasterEmployeeForm.cs",
-              "ToolTip": "D:\\Github Repositories\\LKSKotang2024\\Desktop\\EsemkaHRSystem.Desktop\\EsemkaHRSystem.Desktop\\Forms\\MasterEmployeeForm.cs [Design]",
-              "RelativeToolTip": "EsemkaHRSystem.Desktop\\Forms\\MasterEmployeeForm.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-21T02:17:33.585Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "MyProfileForm.cs",
-              "DocumentMoniker": "D:\\Github Repositories\\LKSKotang2024\\Desktop\\EsemkaHRSystem.Desktop\\EsemkaHRSystem.Desktop\\Forms\\MyProfileForm.cs",
-              "RelativeDocumentMoniker": "EsemkaHRSystem.Desktop\\Forms\\MyProfileForm.cs",
-              "ToolTip": "D:\\Github Repositories\\LKSKotang2024\\Desktop\\EsemkaHRSystem.Desktop\\EsemkaHRSystem.Desktop\\Forms\\MyProfileForm.cs",
-              "RelativeToolTip": "EsemkaHRSystem.Desktop\\Forms\\MyProfileForm.cs",
-              "ViewState": "AQIAAC0AAAAAAAAAAAAUwD4AAAAbAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-21T02:16:31.471Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "MyScheduleForm.cs [Design]",
-              "DocumentMoniker": "D:\\Github Repositories\\LKSKotang2024\\Desktop\\EsemkaHRSystem.Desktop\\EsemkaHRSystem.Desktop\\Forms\\MyScheduleForm.cs",
-              "RelativeDocumentMoniker": "EsemkaHRSystem.Desktop\\Forms\\MyScheduleForm.cs",
-              "ToolTip": "D:\\Github Repositories\\LKSKotang2024\\Desktop\\EsemkaHRSystem.Desktop\\EsemkaHRSystem.Desktop\\Forms\\MyScheduleForm.cs [Design]",
-              "RelativeToolTip": "EsemkaHRSystem.Desktop\\Forms\\MyScheduleForm.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-21T02:14:26.073Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "App.config",
-              "DocumentMoniker": "D:\\Github Repositories\\LKSKotang2024\\Desktop\\EsemkaHRSystem.Desktop\\EsemkaHRSystem.Desktop\\App.config",
-              "RelativeDocumentMoniker": "EsemkaHRSystem.Desktop\\App.config",
-              "ToolTip": "D:\\Github Repositories\\LKSKotang2024\\Desktop\\EsemkaHRSystem.Desktop\\EsemkaHRSystem.Desktop\\App.config",
-              "RelativeToolTip": "EsemkaHRSystem.Desktop\\App.config",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
-              "WhenOpened": "2024-02-21T02:14:19.817Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "MasterJobForm.cs [Design]",
-              "DocumentMoniker": "D:\\Github Repositories\\LKSKotang2024\\Desktop\\EsemkaHRSystem.Desktop\\EsemkaHRSystem.Desktop\\Forms\\MasterJobForm.cs",
-              "RelativeDocumentMoniker": "EsemkaHRSystem.Desktop\\Forms\\MasterJobForm.cs",
-              "ToolTip": "D:\\Github Repositories\\LKSKotang2024\\Desktop\\EsemkaHRSystem.Desktop\\EsemkaHRSystem.Desktop\\Forms\\MasterJobForm.cs [Design]",
-              "RelativeToolTip": "EsemkaHRSystem.Desktop\\Forms\\MasterJobForm.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-21T02:13:37.378Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "MasterCityForm.cs [Design]",
-              "DocumentMoniker": "D:\\Github Repositories\\LKSKotang2024\\Desktop\\EsemkaHRSystem.Desktop\\EsemkaHRSystem.Desktop\\Forms\\MasterCityForm.cs",
-              "RelativeDocumentMoniker": "EsemkaHRSystem.Desktop\\Forms\\MasterCityForm.cs",
-              "ToolTip": "D:\\Github Repositories\\LKSKotang2024\\Desktop\\EsemkaHRSystem.Desktop\\EsemkaHRSystem.Desktop\\Forms\\MasterCityForm.cs [Design]",
-              "RelativeToolTip": "EsemkaHRSystem.Desktop\\Forms\\MasterCityForm.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-21T02:13:35.328Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "MainForm.cs [Design]",
-              "DocumentMoniker": "D:\\Github Repositories\\LKSKotang2024\\Desktop\\EsemkaHRSystem.Desktop\\EsemkaHRSystem.Desktop\\Forms\\MainForm.cs",
-              "RelativeDocumentMoniker": "EsemkaHRSystem.Desktop\\Forms\\MainForm.cs",
-              "ToolTip": "D:\\Github Repositories\\LKSKotang2024\\Desktop\\EsemkaHRSystem.Desktop\\EsemkaHRSystem.Desktop\\Forms\\MainForm.cs [Design]",
-              "RelativeToolTip": "EsemkaHRSystem.Desktop\\Forms\\MainForm.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-21T02:13:33.292Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "LoginForm.cs [Design]",
-              "DocumentMoniker": "D:\\Github Repositories\\LKSKotang2024\\Desktop\\EsemkaHRSystem.Desktop\\EsemkaHRSystem.Desktop\\Forms\\LoginForm.cs",
-              "RelativeDocumentMoniker": "EsemkaHRSystem.Desktop\\Forms\\LoginForm.cs",
-              "ToolTip": "D:\\Github Repositories\\LKSKotang2024\\Desktop\\EsemkaHRSystem.Desktop\\EsemkaHRSystem.Desktop\\Forms\\LoginForm.cs [Design]",
-              "RelativeToolTip": "EsemkaHRSystem.Desktop\\Forms\\LoginForm.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-21T02:13:32.432Z"
             }
           ]
         },

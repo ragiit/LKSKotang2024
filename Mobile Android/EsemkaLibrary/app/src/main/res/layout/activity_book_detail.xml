@@ -8,7 +8,6 @@
     tools:context=".BookDetailActivity">
 
     <LinearLayout
-
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="@color/blue"
@@ -38,8 +37,8 @@
 
             <ImageView
                 android:id="@+id/book_image"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/ic_launcher_background" />
 
@@ -50,7 +49,7 @@
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="8dp"
                 android:text="Title"
-                android:textSize="20sp"
+                android:textSize="30sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -59,6 +58,13 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
                 android:text="Author" />
+
+            <TextView
+                android:id="@+id/tvCategory"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="Category" />
 
             <TextView
                 android:id="@+id/textViewPublicationYear"
@@ -73,7 +79,12 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
                 android:text="ISBN" />
-
+            <TextView
+                android:id="@+id/tvLikes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="Likes" />
             <ImageView
                 android:id="@+id/imageViewCover"
                 android:layout_width="match_parent"
@@ -95,30 +106,30 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
                 android:text="Contents go here" />
-            <TextView
-                android:id="@+id/textVie000wContents"
+
+            <LinearLayout
+                android:layout_marginTop="30dp"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:text="Like Book" />
-            <ImageView
-                android:id="@+id/like"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:scaleType="centerCrop"
-                android:src="@drawable/baseline_favorite_24" />
-            <TextView
-                android:id="@+id/textViewConotents"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:text="Bookmark Book" />
-            <ImageView
-                android:id="@+id/liked"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:scaleType="centerCrop"
-                android:src="@drawable/baseline_bookmark_24" />
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/like"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/baseline_favorite_border_24" />
+
+                <ImageView
+                    android:layout_marginStart="20dp"
+                    android:id="@+id/liked"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/baseline_bookmark_border_24" />
+            </LinearLayout>
+
         </LinearLayout>
     </ScrollView>
 

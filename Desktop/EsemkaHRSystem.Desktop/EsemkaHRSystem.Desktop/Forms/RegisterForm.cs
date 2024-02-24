@@ -93,11 +93,14 @@ namespace EsemkaHRSystem.Desktop
             {
                 if (groupBox1.CheckIsEmpty() || groupBox2.CheckIsEmpty())
                 {
-                    if (!string.IsNullOrWhiteSpace(cbCity.Text) && !string.IsNullOrWhiteSpace(PhotoName))
+                    if (!string.IsNullOrWhiteSpace(PhotoName))
                     {
                         "Please insert all fields".ShowInformationMessage();
                         return;
                     }
+
+                    "Please insert all fields".ShowInformationMessage();
+                    return;
                 }
 
                 var checkEmail = db.Users.FirstOrDefault(x => x.Email == tbEmail.Text);

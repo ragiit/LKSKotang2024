@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -52,6 +53,17 @@ namespace EsemkaHRSystem.Desktop
                     "Successfully Updated".ShowInformationMessage();
                     db.SubmitChanges();
                 }
+
+                var savePath = Helper.PathBaseUrlImage + PhotoName;
+
+                try
+                {
+                    Bitmap bitmap = new Bitmap(FileName);
+
+                    Directory.CreateDirectory(Path.GetDirectoryName(savePath));
+                    bitmap.Save(savePath);
+                }
+                catch { }
             }
         }
 
