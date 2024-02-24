@@ -1,6 +1,6 @@
-CREATE DATABASE EsemkaHRMaster
+CREATE DATABASE EsemkaHRMaster2
 GO
-USE EsemkaHRMaster
+USE EsemkaHRMaster2
 GO
 
 CREATE TABLE EmployeeStatuses (

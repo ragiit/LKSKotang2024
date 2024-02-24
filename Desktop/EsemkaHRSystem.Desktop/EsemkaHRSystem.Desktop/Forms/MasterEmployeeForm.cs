@@ -79,6 +79,7 @@ namespace EsemkaHRSystem.Desktop
                     }).ToList();
 
                 dataGridView1.Columns["JoinDate"].DefaultCellStyle.Format = "dd MMM yyyy";
+                dataGridView1.Columns["Photo"].Visible = false;
                 dataGridView1.Columns["RegistrationDate"].DefaultCellStyle.Format = "dd MMM yyyy";
                 dataGridView1.Columns["StartDate"].DefaultCellStyle.Format = "dd MMM yyyy";
                 dataGridView1.Columns["EndDate"].DefaultCellStyle.Format = "dd MMM yyyy";
@@ -225,6 +226,19 @@ namespace EsemkaHRSystem.Desktop
                 groupBox2.ClearField();
 
                 LoadData();
+            }
+        }
+
+        private void dataGridView1_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            foreach (DataGridViewRow item in dataGridView1.Rows)
+            {
+                if (!string.IsNullOrWhiteSpace(item.Cells["Photo"].Value.ToString()))
+                { 
+                    Bitmap bm = new Bitmap($@"{item.Cells["Photo"].Value.ToString()}");
+                    //bm = new Bitmap(bm, 50, 50);
+                    item.Cells[0].Value = bm;
+                }
             }
         }
     }
