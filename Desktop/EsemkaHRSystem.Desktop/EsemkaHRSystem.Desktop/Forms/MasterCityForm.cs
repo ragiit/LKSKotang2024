@@ -1,14 +1,9 @@
 ﻿using EsemkaHRSystem.Desktop.DataContext;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Xml.Linq;
 
 namespace EsemkaHRSystem.Desktop
 {
@@ -33,7 +28,7 @@ namespace EsemkaHRSystem.Desktop
                 cbCountry.DisplayMember = "Name";
                 cbCountry.DataSource = Countries;
 
-                dataGridView1.DataSource = db.Cities.Where(x => x.Name.ToLower().Contains(tbSearch.Text.ToLower())).Select(x => new
+                dataGridView1.DataSource = db.Cities.Where(x => x.Name.ToLower().Contains(tbSearch.Text.ToLower()) || x.Country.Name.ToLower().Contains(tbSearch.Text.ToLower())).Select(x => new
                 {
                     x.ID,
                     Country = x.Country.Name,
@@ -143,6 +138,11 @@ namespace EsemkaHRSystem.Desktop
 
                 LoadData();
             }
+        }
+
+        private void tbSearch_TextChanged(object sender, EventArgs e)
+        {
+            LoadData();
         }
     }
 }

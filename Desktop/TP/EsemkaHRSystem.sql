@@ -1,6 +1,6 @@
-CREATE DATABASE EsemkaHRMaster2
+CREATE DATABASE EsemkaHRSystem
 GO
-USE EsemkaHRMaster2
+USE EsemkaHRSystem
 GO
 
 CREATE TABLE EmployeeStatuses (
@@ -263,10 +263,35 @@ INSERT INTO Countries (Name, Code) VALUES
 	('Indonesia', 'ID');
 
 INSERT INTO Cities (Name, CountryID) VALUES
+    ('Kabul', 1),
+    ('Kandahar', 1),
+    ('Herat', 1),
+    ('Mazar-i-Sharif', 1),
+    ('Jalalabad', 1),
+    ('Kunduz', 1),
+    ('Lashkar Gah', 1),
+	('Tirana', 2),
+    ('Durrës', 2),
+    ('Vlorë', 2),
+    ('Shkodër', 2),
+    ('Fier', 2),
+    ('Korçë', 2),
 	('Tokyo', 9),
 	('Kyoto', 9),
 	('Sapporo', 9),
 	('Nagoya', 9),
+	('Vienna', 10),
+    ('Graz', 10),
+    ('Linz', 10),
+    ('Salzburg', 10),
+    ('Innsbruck', 10),
+    ('Klagenfurt', 10),
+	 ('Baku', 11),
+    ('Ganja', 11),
+    ('Sumqayit', 11),
+    ('Mingachevir', 11),
+    ('Lankaran', 11),
+    ('Shirvan', 11),
 	('Yokohama', 9),
 	('New York City', 3),
 	('London', 17),

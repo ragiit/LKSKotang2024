@@ -1,12 +1,7 @@
 ﻿using EsemkaHRSystem.Desktop.DataContext;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace EsemkaHRSystem.Desktop
@@ -30,7 +25,7 @@ namespace EsemkaHRSystem.Desktop
             dataGridView1.DataSource = null;
             using (DataClasses1DataContext db = new DataClasses1DataContext())
             {
-                dataGridView1.DataSource = db.Countries.Where(x => x.Name.ToLower().Contains(tbSearch.Text.ToLower())).Select(x => new
+                dataGridView1.DataSource = db.Countries.Where(x => x.Name.ToLower().Contains(tbSearch.Text.ToLower()) || x.Code.ToLower().Contains(tbSearch.Text.ToLower())).Select(x => new
                 {
                     x.ID,
                     x.Name,

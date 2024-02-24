@@ -22,7 +22,7 @@ namespace EsemkaHRSystem.Desktop.DataContext
 	using System;
 	
 	
-	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="EsemkaHRMaster")]
+	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="EsemkaHRSystem")]
 	public partial class DataClasses1DataContext : System.Data.Linq.DataContext
 	{
 		

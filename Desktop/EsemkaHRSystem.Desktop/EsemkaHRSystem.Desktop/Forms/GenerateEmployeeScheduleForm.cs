@@ -1,13 +1,8 @@
 ﻿using EsemkaHRSystem.Desktop.DataContext;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Runtime.InteropServices.ComTypes;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace EsemkaHRSystem.Desktop
@@ -25,7 +20,7 @@ namespace EsemkaHRSystem.Desktop
             dtEndDate.MinDate = DateTime.Now;
             using (DataClasses1DataContext db = new DataClasses1DataContext())
             {
-                cbUser.DataSource = db.Users.Where(x => x.JobTitle.Level <= 5 && x.Role.Name == "User" && x.Active && x.JoinDate.Date >= DateTime.Now.Date).ToList();
+                cbUser.DataSource = db.Users.Where(x => x.JobTitle.Level <= 5 && x.Role.Name == "User" && x.Active && x.JoinDate.Date <= DateTime.Now.Date).ToList();
                 cbWorkLocation.DataSource = db.WorkLocations.ToList();
                 cbStartTime.DataSource = db.Times.ToList();
                 cbEndTime.DataSource = db.Times.ToList();

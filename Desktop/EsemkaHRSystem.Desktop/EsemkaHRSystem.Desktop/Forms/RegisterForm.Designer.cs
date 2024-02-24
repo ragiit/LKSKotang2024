@@ -215,9 +215,11 @@
             // dateTimePickerDateOfBirth
             // 
             this.dateTimePickerDateOfBirth.Location = new System.Drawing.Point(283, 170);
+            this.dateTimePickerDateOfBirth.MaxDate = new System.DateTime(2024, 2, 24, 0, 0, 0, 0);
             this.dateTimePickerDateOfBirth.Name = "dateTimePickerDateOfBirth";
             this.dateTimePickerDateOfBirth.Size = new System.Drawing.Size(250, 21);
             this.dateTimePickerDateOfBirth.TabIndex = 31;
+            this.dateTimePickerDateOfBirth.Value = new System.DateTime(2024, 2, 24, 0, 0, 0, 0);
             // 
             // label16
             // 

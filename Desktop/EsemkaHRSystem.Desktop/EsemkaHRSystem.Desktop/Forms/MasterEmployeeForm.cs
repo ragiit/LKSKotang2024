@@ -1,13 +1,9 @@
 ﻿using EsemkaHRSystem.Desktop.DataContext;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace EsemkaHRSystem.Desktop
@@ -234,10 +230,15 @@ namespace EsemkaHRSystem.Desktop
             foreach (DataGridViewRow item in dataGridView1.Rows)
             {
                 if (!string.IsNullOrWhiteSpace(item.Cells["Photo"].Value.ToString()))
-                { 
+                {
                     Bitmap bm = new Bitmap($@"{item.Cells["Photo"].Value.ToString()}");
                     //bm = new Bitmap(bm, 50, 50);
                     item.Cells[0].Value = bm;
+                }
+
+                if (!Convert.ToBoolean(item.Cells["Active"].Value))
+                {
+                    item.DefaultCellStyle.BackColor = Color.Salmon;
                 }
             }
         }
