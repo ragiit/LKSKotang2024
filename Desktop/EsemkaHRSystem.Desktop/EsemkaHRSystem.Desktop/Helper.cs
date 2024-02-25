@@ -2,6 +2,8 @@
 using System;
 using System.IO;
 using System.Linq;
+using System.Security.Cryptography;
+using System.Text;
 using System.Windows.Forms;
 
 namespace EsemkaHRSystem.Desktop
@@ -42,6 +44,21 @@ namespace EsemkaHRSystem.Desktop
             bool b2 = control.Controls.OfType<ComboBox>().Where(a => string.IsNullOrWhiteSpace(a.Text)).Any();
 
             return b1 || b2;
+        }
+
+        public static string GetSHA256Hash(string input)
+        {
+            using (SHA256 sha256Hash = SHA256.Create())
+            {
+                // Konversi string ke byte array, hitung hash, dan konversi kembali ke string hexadecimal
+                byte[] bytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(input));
+                StringBuilder builder = new StringBuilder();
+                foreach (byte b in bytes)
+                {
+                    builder.Append(b.ToString("x2"));
+                }
+                return builder.ToString();
+            }
         }
     }
 }

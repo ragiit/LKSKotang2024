@@ -27,8 +27,12 @@ public partial class EsemkaLibraryContext : DbContext
 
     public virtual DbSet<User> Users { get; set; }
 
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        => optionsBuilder.UseSqlServer("Server=.\\ITSSB;Database=EsemkaLibrary;Trusted_Connection=True;TrustServerCertificate=True");
+    protected override void OnConfiguring(DbContextOptionsBuilder options) => options.UseInMemoryDatabase("Example");
+
+
+    //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    //=> optionsBuilder.UseSqlServer("Server=.\\ITSSB;Database=EsemkaLibrary;Trusted_Connection=True;TrustServerCertificate=True");
+    //=> optionsBuilder.UseSqlServer("Server=.\\ITSSB;Database=EsemkaLibrary;Trusted_Connection=True;TrustServerCertificate=True");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

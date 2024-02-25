@@ -28,7 +28,7 @@ namespace EsemkaHRSystem.Desktop
                     return;
                 }
 
-                var user = db.Users.FirstOrDefault(x => (x.Username == tbUsrname.Text || x.Email == tbUsrname.Text) && x.Password == tbPassword.Text);
+                var user = db.Users.FirstOrDefault(x => (x.Username == tbUsrname.Text || x.Email == tbUsrname.Text) && x.Password == Helper.GetSHA256Hash(tbPassword.Text));
                 if (user == null)
                 {
                     "Please correct the error and try again".ShowInformationMessage();

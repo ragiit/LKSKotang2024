@@ -77,7 +77,7 @@
         android:layout_gravity="start"
         android:layout_marginTop="20dp"
         android:fontFamily="sans-serif-medium"
-        android:hint="Signature"
+        android:hint="Motto"
         android:padding="20dp"
         tools:ignore="HardcodedText" />
 

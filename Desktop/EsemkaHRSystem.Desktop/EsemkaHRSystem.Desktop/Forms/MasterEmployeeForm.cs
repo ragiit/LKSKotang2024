@@ -229,12 +229,16 @@ namespace EsemkaHRSystem.Desktop
         {
             foreach (DataGridViewRow item in dataGridView1.Rows)
             {
-                if (!string.IsNullOrWhiteSpace(item.Cells["Photo"].Value.ToString()))
+                try
                 {
-                    Bitmap bm = new Bitmap($@"{item.Cells["Photo"].Value.ToString()}");
-                    //bm = new Bitmap(bm, 50, 50);
-                    item.Cells[0].Value = bm;
+                    if (!string.IsNullOrWhiteSpace(item.Cells["Photo"].Value.ToString()))
+                    {
+                        Bitmap bm = new Bitmap($@"{item.Cells["Photo"].Value.ToString()}");
+                        //bm = new Bitmap(bm, 50, 50);
+                        item.Cells[0].Value = bm;
+                    }
                 }
+                catch { }
 
                 if (!Convert.ToBoolean(item.Cells["Active"].Value))
                 {

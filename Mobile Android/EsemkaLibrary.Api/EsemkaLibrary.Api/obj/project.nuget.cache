@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "LEB3OsOZDnlSQwScga2ieOUIqZFETeodvlO+OjWV4u2Q5dOzpvxIVVVXwD5OmSiyBnnTRd2PL9DWX8nPPNbjoQ==",
+  "dgSpecHash": "nnQvDismUaResVm/5ep7BmDLrRX3UZfM6IabXPnY/jXymS/I3COKGxer6zeDEE3X0UajCWVi3+WfeT97WY9U5g==",
   "success": true,
   "projectFilePath": "D:\\Github Repositories\\LKSKotang2024_2\\Mobile Android\\EsemkaLibrary.Api\\EsemkaLibrary.Api\\EsemkaLibrary.Api.csproj",
   "expectedPackageFiles": [
@@ -22,6 +22,7 @@
     "C:\\Users\\argip\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\8.0.2\\microsoft.entityframeworkcore.abstractions.8.0.2.nupkg.sha512",
     "C:\\Users\\argip\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\8.0.2\\microsoft.entityframeworkcore.analyzers.8.0.2.nupkg.sha512",
     "C:\\Users\\argip\\.nuget\\packages\\microsoft.entityframeworkcore.design\\8.0.2\\microsoft.entityframeworkcore.design.8.0.2.nupkg.sha512",
+    "C:\\Users\\argip\\.nuget\\packages\\microsoft.entityframeworkcore.inmemory\\8.0.2\\microsoft.entityframeworkcore.inmemory.8.0.2.nupkg.sha512",
     "C:\\Users\\argip\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\8.0.2\\microsoft.entityframeworkcore.relational.8.0.2.nupkg.sha512",
     "C:\\Users\\argip\\.nuget\\packages\\microsoft.entityframeworkcore.sqlserver\\8.0.2\\microsoft.entityframeworkcore.sqlserver.8.0.2.nupkg.sha512",
     "C:\\Users\\argip\\.nuget\\packages\\microsoft.entityframeworkcore.tools\\8.0.2\\microsoft.entityframeworkcore.tools.8.0.2.nupkg.sha512",

@@ -37,7 +37,7 @@ namespace EsemkaLibrary.Api.Controllers
             return Ok(new
             {
                 Token = GenerateToken(user.Username!, user.Id.ToString()),
-                Expires = DateTime.UtcNow.AddHours(1)
+                Expires = DateTime.UtcNow.AddMinutes(2)
             });
         }
 
@@ -140,7 +140,7 @@ namespace EsemkaLibrary.Api.Controllers
                     new Claim(ClaimTypes.Name, username),
                     new Claim(ClaimTypes.NameIdentifier, id),
                 }),
-                Expires = DateTime.UtcNow.AddHours(1), // token expires in 1 hour
+                Expires = DateTime.UtcNow.AddMinutes(2), // token expires in 1 hour
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature),
                 Issuer = username
             };
@@ -169,6 +169,7 @@ namespace EsemkaLibrary.Api.Controllers
         [HttpGet("books")]
         public async Task<IActionResult> BooksGet()
         {
+            var a = await _context.BookCategories.ToListAsync();
             var books = await _context.Books
                 .Include(x => x.Categories)
                 .Include(x => x.BookContents)

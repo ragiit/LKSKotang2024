@@ -302,6 +302,7 @@ D:\Github Repositories\LKSKotang2024_2\Mobile Android\EsemkaLibrary.Api\EsemkaLi
 D:\Github Repositories\LKSKotang2024_2\Mobile Android\EsemkaLibrary.Api\EsemkaLibrary.Api\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.dll
 D:\Github Repositories\LKSKotang2024_2\Mobile Android\EsemkaLibrary.Api\EsemkaLibrary.Api\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Abstractions.dll
 D:\Github Repositories\LKSKotang2024_2\Mobile Android\EsemkaLibrary.Api\EsemkaLibrary.Api\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Design.dll
+D:\Github Repositories\LKSKotang2024_2\Mobile Android\EsemkaLibrary.Api\EsemkaLibrary.Api\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.InMemory.dll
 D:\Github Repositories\LKSKotang2024_2\Mobile Android\EsemkaLibrary.Api\EsemkaLibrary.Api\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Relational.dll
 D:\Github Repositories\LKSKotang2024_2\Mobile Android\EsemkaLibrary.Api\EsemkaLibrary.Api\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.SqlServer.dll
 D:\Github Repositories\LKSKotang2024_2\Mobile Android\EsemkaLibrary.Api\EsemkaLibrary.Api\bin\Debug\net8.0\Microsoft.Extensions.DependencyModel.dll

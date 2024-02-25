@@ -1,7 +1,20 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "D:\\Github Repositories\\LKSKotang2024_2\\Mobile Android\\EsemkaLibrary.Api\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{DDA18C63-2EBB-48DB-972D-D64762A2295C}|EsemkaLibrary.Api\\EsemkaLibrary.Api.csproj|d:\\github repositories\\lkskotang2024_2\\mobile android\\esemkalibrary.api\\esemkalibrary.api\\controllers\\esemkalibrarycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DDA18C63-2EBB-48DB-972D-D64762A2295C}|EsemkaLibrary.Api\\EsemkaLibrary.Api.csproj|solutionrelative:esemkalibrary.api\\controllers\\esemkalibrarycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DDA18C63-2EBB-48DB-972D-D64762A2295C}|EsemkaLibrary.Api\\EsemkaLibrary.Api.csproj|d:\\github repositories\\lkskotang2024_2\\mobile android\\esemkalibrary.api\\esemkalibrary.api\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{DDA18C63-2EBB-48DB-972D-D64762A2295C}|EsemkaLibrary.Api\\EsemkaLibrary.Api.csproj|solutionrelative:esemkalibrary.api\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DDA18C63-2EBB-48DB-972D-D64762A2295C}|EsemkaLibrary.Api\\EsemkaLibrary.Api.csproj|d:\\github repositories\\lkskotang2024_2\\mobile android\\esemkalibrary.api\\esemkalibrary.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DDA18C63-2EBB-48DB-972D-D64762A2295C}|EsemkaLibrary.Api\\EsemkaLibrary.Api.csproj|solutionrelative:esemkalibrary.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,11 +22,50 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "D:\\Github Repositories\\LKSKotang2024_2\\Mobile Android\\EsemkaLibrary.Api\\EsemkaLibrary.Api\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "EsemkaLibrary.Api\\Properties\\launchSettings.json",
+              "ToolTip": "D:\\Github Repositories\\LKSKotang2024_2\\Mobile Android\\EsemkaLibrary.Api\\EsemkaLibrary.Api\\Properties\\launchSettings.json",
+              "RelativeToolTip": "EsemkaLibrary.Api\\Properties\\launchSettings.json",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAABUAAAAOAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-02-25T15:09:39.654Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "EsemkaLibraryController.cs",
+              "DocumentMoniker": "D:\\Github Repositories\\LKSKotang2024_2\\Mobile Android\\EsemkaLibrary.Api\\EsemkaLibrary.Api\\Controllers\\EsemkaLibraryController.cs",
+              "RelativeDocumentMoniker": "EsemkaLibrary.Api\\Controllers\\EsemkaLibraryController.cs",
+              "ToolTip": "D:\\Github Repositories\\LKSKotang2024_2\\Mobile Android\\EsemkaLibrary.Api\\EsemkaLibrary.Api\\Controllers\\EsemkaLibraryController.cs",
+              "RelativeToolTip": "EsemkaLibrary.Api\\Controllers\\EsemkaLibraryController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAnAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-25T15:09:32.34Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Github Repositories\\LKSKotang2024_2\\Mobile Android\\EsemkaLibrary.Api\\EsemkaLibrary.Api\\Program.cs",
+              "RelativeDocumentMoniker": "EsemkaLibrary.Api\\Program.cs",
+              "ToolTip": "D:\\Github Repositories\\LKSKotang2024_2\\Mobile Android\\EsemkaLibrary.Api\\EsemkaLibrary.Api\\Program.cs",
+              "RelativeToolTip": "EsemkaLibrary.Api\\Program.cs",
+              "ViewState": "AQIAAEEAAAAAAAAAAAAAAFAAAAAKAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-25T15:03:47.727Z",
+              "EditorCaption": ""
             }
           ]
         },

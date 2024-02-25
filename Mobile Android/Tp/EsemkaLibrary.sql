@@ -130,7 +130,7 @@ INSERT INTO BookContent (BookID, Content) VALUES
 
  
 -- Inserting data into the Users table with usernames as lowercase concatenation of full names
-INSERT INTO Users (Username, Password, FullName, DateOfBirth, Signature)
+INSERT INTO Users (Username, Password, FullName, DateOfBirth, Motto)
 VALUES
 ('johndoe', 'password1', 'John Doe', '1990-05-15', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'),
 ('janesmith', 'password2', 'Jane Smith', '1985-09-23', 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'),
