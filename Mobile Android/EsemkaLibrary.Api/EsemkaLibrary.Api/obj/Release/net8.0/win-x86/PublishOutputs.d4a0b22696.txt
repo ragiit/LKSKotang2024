@@ -1,0 +1,6 @@
+D:\GithubRepo\LKSKotang2024\Mobile Android\EsemkaLibrary.Api\EsemkaLibrary.Api\obj\Release\net8.0\win-x86\PubTmp\Out\appsettings.Development.json
+D:\GithubRepo\LKSKotang2024\Mobile Android\EsemkaLibrary.Api\EsemkaLibrary.Api\obj\Release\net8.0\win-x86\PubTmp\Out\appsettings.json
+D:\GithubRepo\LKSKotang2024\Mobile Android\EsemkaLibrary.Api\EsemkaLibrary.Api\obj\Release\net8.0\win-x86\PubTmp\Out\EsemkaLibrary.Api.pdb
+D:\GithubRepo\LKSKotang2024\Mobile Android\EsemkaLibrary.Api\EsemkaLibrary.Api\obj\Release\net8.0\win-x86\PubTmp\Out\aspnetcorev2_inprocess.dll
+D:\GithubRepo\LKSKotang2024\Mobile Android\EsemkaLibrary.Api\EsemkaLibrary.Api\obj\Release\net8.0\win-x86\PubTmp\Out\Microsoft.Data.SqlClient.SNI.dll
+D:\GithubRepo\LKSKotang2024\Mobile Android\EsemkaLibrary.Api\EsemkaLibrary.Api\obj\Release\net8.0\win-x86\PubTmp\Out\EsemkaLibrary.Api.exe

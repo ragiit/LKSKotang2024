@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("EsemkaLibrary.Api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4c3ef1efb656bb0f59d2744bcfaa7ffc99541f51")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+85822f99fef231f7355356d5bcfa30b2a08acf71")]
 [assembly: System.Reflection.AssemblyProductAttribute("EsemkaLibrary.Api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("EsemkaLibrary.Api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

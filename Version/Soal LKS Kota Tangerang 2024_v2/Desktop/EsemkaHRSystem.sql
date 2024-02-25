@@ -151,14 +151,11 @@ INSERT INTO WorkLocations (Name) VALUES
 INSERT INTO EmployeeStatuses (Name) VALUES
 	('Probationary'),
 	('Contractual'),
-	('Permanent'),
-	('Part-time'),
-	('Full-time'),
+	('Part-time'), 
 	('Temporary'),
 	('Internship'),
 	('Freelance'),
-	('Trainee'),
-	('Consultant'); 
+	('Trainee'); 
 
 DECLARE @StartTime TIME = '08:00:00';
 DECLARE @EndTime TIME = '22:00:00';

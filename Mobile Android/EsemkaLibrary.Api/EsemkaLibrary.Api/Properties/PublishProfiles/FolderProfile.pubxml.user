@@ -4,8 +4,8 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
 -->
 <Project>
   <PropertyGroup>
-    <_PublishTargetUrl>D:\Github Repositories\LKSKotang2024_2\Version\Soal LKS Kota Tangerang 2024_v2\Mobile\EsemkaLibrary.API</_PublishTargetUrl>
-    <History>True|2024-02-25T15:02:04.9995726Z;</History>
+    <_PublishTargetUrl>D:\GithubRepo\LKSKotang2024\Version\Soal LKS Kota Tangerang 2024_v2\Mobile\Api</_PublishTargetUrl>
+    <History>True|2024-02-25T15:59:31.7571917Z;False|2024-02-25T22:59:18.5134652+07:00;False|2024-02-25T22:57:12.5064538+07:00;False|2024-02-25T22:56:29.4525911+07:00;</History>
     <LastFailureDetails />
   </PropertyGroup>
 </Project>

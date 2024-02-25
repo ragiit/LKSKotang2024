@@ -1,26 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Github Repositories\\LKSKotang2024_2\\Mobile Android\\EsemkaLibrary.Api\\EsemkaLibrary.Api\\EsemkaLibrary.Api.csproj": {}
+    "D:\\GithubRepo\\LKSKotang2024\\Mobile Android\\EsemkaLibrary.Api\\EsemkaLibrary.Api\\EsemkaLibrary.Api.csproj": {}
   },
   "projects": {
-    "D:\\Github Repositories\\LKSKotang2024_2\\Mobile Android\\EsemkaLibrary.Api\\EsemkaLibrary.Api\\EsemkaLibrary.Api.csproj": {
+    "D:\\GithubRepo\\LKSKotang2024\\Mobile Android\\EsemkaLibrary.Api\\EsemkaLibrary.Api\\EsemkaLibrary.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Github Repositories\\LKSKotang2024_2\\Mobile Android\\EsemkaLibrary.Api\\EsemkaLibrary.Api\\EsemkaLibrary.Api.csproj",
+        "projectUniqueName": "D:\\GithubRepo\\LKSKotang2024\\Mobile Android\\EsemkaLibrary.Api\\EsemkaLibrary.Api\\EsemkaLibrary.Api.csproj",
         "projectName": "EsemkaLibrary.Api",
-        "projectPath": "D:\\Github Repositories\\LKSKotang2024_2\\Mobile Android\\EsemkaLibrary.Api\\EsemkaLibrary.Api\\EsemkaLibrary.Api.csproj",
+        "projectPath": "D:\\GithubRepo\\LKSKotang2024\\Mobile Android\\EsemkaLibrary.Api\\EsemkaLibrary.Api\\EsemkaLibrary.Api.csproj",
         "packagesPath": "C:\\Users\\argip\\.nuget\\packages\\",
-        "outputPath": "D:\\Github Repositories\\LKSKotang2024_2\\Mobile Android\\EsemkaLibrary.Api\\EsemkaLibrary.Api\\obj\\publish\\win-x86\\",
+        "outputPath": "D:\\GithubRepo\\LKSKotang2024\\Mobile Android\\EsemkaLibrary.Api\\EsemkaLibrary.Api\\obj\\publish\\win-x86\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files\\DevExpress 23.2\\Components\\Offline Packages",
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "C:\\Program Files\\DevExpress 23.2\\Components\\Offline Packages"
         ],
         "configFilePaths": [
           "C:\\Users\\argip\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 23.2.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -29,8 +27,7 @@
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "C:\\Program Files\\DevExpress 23.2\\Components\\System\\Components\\Packages": {},
-          "https://api.nuget.org/v3/index.json": {},
-          "https://nuget.devexpress.com/eULmTj43utoqkgX95UtOXqjKa9fZiFDcdbBrZbrnc7bk9lkbog/api/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
@@ -42,11 +39,6 @@
           "warnAsError": [
             "NU1605"
           ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -88,7 +80,7 @@
             "Microsoft.NET.ILLink.Tasks": {
               "suppressParent": "All",
               "target": "Package",
-              "version": "[8.0.2, )",
+              "version": "[8.0.0, )",
               "autoReferenced": true
             },
             "Swashbuckle.AspNetCore": {
@@ -110,15 +102,15 @@
           "downloadDependencies": [
             {
               "name": "Microsoft.AspNetCore.App.Runtime.win-x86",
-              "version": "[8.0.2, 8.0.2]"
+              "version": "[8.0.0, 8.0.0]"
             },
             {
               "name": "Microsoft.NETCore.App.Runtime.win-x86",
-              "version": "[8.0.2, 8.0.2]"
+              "version": "[8.0.0, 8.0.0]"
             },
             {
               "name": "Microsoft.WindowsDesktop.App.Runtime.win-x86",
-              "version": "[8.0.2, 8.0.2]"
+              "version": "[8.0.0, 8.0.0]"
             }
           ],
           "frameworkReferences": {
@@ -129,7 +121,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
         }
       },
       "runtimes": {
