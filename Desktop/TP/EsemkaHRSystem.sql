@@ -70,7 +70,7 @@ CREATE TABLE Users (
     CityID INT NOT NULL, 
 	EmployeeStatusID INT,
     Username VARCHAR(50) UNIQUE NOT NULL,
-    Password VARCHAR(100) NOT NULL,
+    Password VARCHAR(MAX) NOT NULL,
     Email VARCHAR(100) UNIQUE NOT NULL,
     FullName VARCHAR(100) NOT NULL,
 	IDCardNumber VARCHAR(100) NOT NULL,
